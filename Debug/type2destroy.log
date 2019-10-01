@@ -1,2 +1,4 @@
 ﻿  type2destroy.cpp
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(324): warning C4172:  retornando o endereço da variável local ou temporário: coord
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(419): warning C4172:  retornando o endereço da variável local ou temporário: originDestiny
   type2destroy.vcxproj -> C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\Debug\type2destroy.exe
