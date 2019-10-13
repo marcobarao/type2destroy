@@ -23,17 +23,31 @@ ALLEGRO_DISPLAY* display = NULL;
 ALLEGRO_EVENT_QUEUE* queue = NULL;
 ALLEGRO_TIMER* timer = NULL;
 ALLEGRO_DISPLAY_MODE mode;
-ALLEGRO_FONT* font = NULL;
+ALLEGRO_FONT* font[5];
 
 void initShip(SpaceShip& ship);
 void drawShip(SpaceShip& ship);
+
+void initCursor(Cursor& cursor);
+void hasClickedOnRestart(
+	Cursor& cursor,
+	Button& button,
+	SpaceShip& ship,
+	Asteroid asteroids[],
+	int NUM_ASTEROIDS,
+	Bullet bullets[],
+	int NUM_BULLETS,
+	BlackHole& blackHole,
+	bool& gameover
+);
+void initRestart(Button& button);
 
 void drawInfos(SpaceShip& ship);
 
 void initAsteroids(Asteroid asteroids[], int size);
 void drawAsteroids(Asteroid asteroids[], int size);
 void updateAsteroids(Asteroid asteroids[], int size, SpaceShip &ship);
-void createAsteroid(Asteroid asteroids[], int size);
+void createAsteroid(Asteroid asteroids[], int size, int level);
 int* generateAsteroidXY();
 
 void initBlackHole(BlackHole &blackHole);
@@ -74,9 +88,11 @@ int initGame() {
 		return 0;
 	}
 
-	font = al_load_ttf_font("./assets/fonts/kenvector_future.ttf", 24, 0);
-	if (!font) {
-		showErrorMsg("Falha ao carregar a fonte");
+	for (int i = 0; i < 5; i++) {
+		font[i] = al_load_ttf_font("./assets/fonts/kenvector_future.ttf", 24 + i * 8, 0);
+		if (!font[i]) {
+			showErrorMsg("Falha ao carregar a fonte");
+		}
 	}
 
 	if (!al_init_image_addon()) {
@@ -122,9 +138,20 @@ int initGame() {
 		return 0;
 	}
 
+	if (!al_install_mouse()) {
+		showErrorMsg("Falha ao inicializar o mouse");
+		return -1;
+	}
+
+	if (!al_hide_mouse_cursor(display)) {
+		showErrorMsg("Falha ao esconder o cursor do mouse");
+		return -1;
+	}
+
 	al_register_event_source(queue, al_get_keyboard_event_source());
 	al_register_event_source(queue, al_get_timer_event_source(timer));
 	al_register_event_source(queue, al_get_display_event_source(display));
+	al_register_event_source(queue, al_get_mouse_event_source());
 
 	al_start_timer(timer);
 
@@ -133,14 +160,16 @@ int initGame() {
 
 int main()
 {
-	srand(time(NULL));
 	bool close = false;
+	bool gameover = false;
 	bool redraw = true;
 
 	SpaceShip ship;
 	Asteroid asteroids[NUM_ASTEROIDS];
 	Bullet bullets[NUM_BULLETS];
 	BlackHole blackHole;
+	Cursor cursor;
+	Button restart;
 
 	if (!initGame()) {
 		return -1;
@@ -159,6 +188,8 @@ int main()
 	al_play_sample(env, 0.2, 0.0, 1.3, ALLEGRO_PLAYMODE_LOOP, 0);
 
 	initShip(ship);
+	initCursor(cursor);
+	initRestart(restart);
 	initAsteroids(asteroids, NUM_ASTEROIDS);
 	initBullets(bullets, NUM_BULLETS);
 	initBlackHole(blackHole);
@@ -167,10 +198,21 @@ int main()
 	while (!close) {
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(queue, &ev);
-
+		float seconds;
+		
 		switch (ev.type) {
 			case ALLEGRO_EVENT_TIMER:
 				redraw = true;
+				seconds = al_get_timer_count(timer) / 100.0;
+				srand(time(NULL));
+
+				if (ship.kill > ship.level * 4) {
+					ship.level++;
+				}
+
+				if (((int) seconds == seconds) && ((int) seconds) % 2 == 0) {
+					createAsteroid(asteroids, NUM_ASTEROIDS, ship.level);
+				}
 
 				updateAsteroids(asteroids, NUM_ASTEROIDS, ship);
 				updateBlackHole(blackHole);
@@ -183,7 +225,7 @@ int main()
 				switch (ev.keyboard.keycode) {
 					case ALLEGRO_KEY_SPACE:
 						keys[SPACE] = true;
-						createAsteroid(asteroids, NUM_ASTEROIDS);
+						createAsteroid(asteroids, NUM_ASTEROIDS, ship.level);
 						break;
 					case ALLEGRO_KEY_F:
 						keys[F] = true;
@@ -207,21 +249,42 @@ int main()
 				case ALLEGRO_KEY_B:
 					keys[B] = false;
 					break;
+				case ALLEGRO_EVENT_MOUSE_AXES:
+					cursor.x = ev.mouse.x;
+					cursor.y = ev.mouse.y;
+					break;
+				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+					hasClickedOnRestart(cursor, restart, ship, asteroids, NUM_ASTEROIDS, bullets, NUM_BULLETS, blackHole, gameover);
+					break;
 		}
 
 		if (redraw && al_is_event_queue_empty(queue)) {
 			redraw = false;
+			gameover = ship.lives <= 0;
 
 			for (int i = 0; i < mapSize; i++)
 			{
 				al_draw_bitmap(bg, tileSize * (i % mapColumns), tileSize * (i / mapColumns), 0);
 			}
 
-			drawBlackHole(blackHole);
-			drawAsteroids(asteroids, NUM_ASTEROIDS);
-			drawInfos(ship);
-			drawBullets(bullets, NUM_BULLETS);
-			drawShip(ship);
+			if (gameover) {
+				char string[] = "GAMEOVER";
+				al_clear_to_color(al_map_rgba(0, 0, 0, 0.5));
+				int midX = al_get_text_width(font[4], string) / 2;
+				int midY = al_get_font_line_height(font[4]) / 2;
+				al_draw_text(font[4], al_map_rgb(255, 255, 255), (mode.width / 2 - midX), mode.height / 2 - midY, 20, string);
+				al_draw_bitmap(restart.bitmap, restart.x, restart.y, 0);
+			}
+			else {
+				drawBlackHole(blackHole);
+				drawAsteroids(asteroids, NUM_ASTEROIDS);
+				drawInfos(ship);
+				drawBullets(bullets, NUM_BULLETS);
+				drawShip(ship);
+			}
+
+			al_draw_bitmap(cursor.bitmap, cursor.x, cursor.y, 0);
+
 
 			al_flip_display();
 			al_clear_to_color(al_map_rgb(0, 0, 0));
@@ -229,10 +292,19 @@ int main()
 	}
 
 	al_destroy_display(display);
-	al_destroy_font(font);
+	for (int i = 0; i < 5; i++) {
+		al_destroy_font(font[i]);
+	}
 	al_destroy_event_queue(queue);
 
 	return 0;
+}
+
+void initRestart(Button& button)
+{
+	button.x = mode.width / 2 - 140;
+	button.y = mode.height / 2 + 80;
+	button.bitmap = al_load_bitmap("assets/sprites/restart.png");
 }
 
 void initShip(SpaceShip& ship) {
@@ -240,20 +312,16 @@ void initShip(SpaceShip& ship) {
 	ship.y = mode.height / 2 - 32;
 	ship.ID = PLAYER;
 	ship.lives = 3;
-	ship.score = 0;
+	ship.kill = 0;
+	ship.level = 1;
 	ship.bitmap = al_load_bitmap("assets/sprites/ship.png");
 }
 
 void drawShip(SpaceShip& ship) {
-	//al_draw_scaled_bitmap(ship.bitmap,
-	//	0, 0,                                // source origin
-	//	al_get_bitmap_width(ship.bitmap),    // source width
-	//	al_get_bitmap_height(ship.bitmap),   // source height
-	//	ship.x, ship.y,                      // target origin
-	//	32, 32,                              // target dimensions
-	//	0                                    // flags
-	//);
-	al_draw_rotated_bitmap(ship.bitmap, al_get_bitmap_width(ship.bitmap) / 2, al_get_bitmap_height(ship.bitmap) / 2, ship.x, ship.y, ship.angle, 0);
+	al_draw_scaled_rotated_bitmap(ship.bitmap,
+		al_get_bitmap_width(ship.bitmap) / 2, al_get_bitmap_height(ship.bitmap) / 2,
+		ship.x, ship.y, 0.5, 0.5,
+		ship.angle, 0);
 }
 
 void initAsteroids(Asteroid asteroids[], int size)
@@ -261,10 +329,10 @@ void initAsteroids(Asteroid asteroids[], int size)
 	for (int i = 0; i < size; i++)
 	{
 		asteroids[i].ID = ASTEROID;
-		asteroids[i].speed = 7;
+		asteroids[i].speed = 8;
 		asteroids[i].live = false;
 		asteroids[i].level = 1;
-		asteroids[i].bitmap = al_load_bitmap("assets/sprites/asteroid_tiny.png");
+		asteroids[i].bitmap = al_load_bitmap("assets/sprites/asteroid_1.png");
 	}
 }
 
@@ -277,17 +345,29 @@ void drawAsteroids(Asteroid asteroids[], int size)
 	}
 }
 
-void createAsteroid(Asteroid asteroids[], int size)
+void createAsteroid(Asteroid asteroids[], int size, int level)
 {
-	for (int i = 0; i < size; i++)
-	{
-		if (!asteroids[i].live)
+	int qtAsteroids = random(1, 3);
+
+	for (int i = 1; i <= qtAsteroids; i++) {
+		for (int j = 0; j < size; j++)
 		{
-			int* xy = generateAsteroidXY();
-			asteroids[i].x = xy[0];
-			asteroids[i].y = xy[1];
-			asteroids[i].live = true;
-			break;
+			if (!asteroids[j].live)
+			{
+				int* xy = generateAsteroidXY();
+				asteroids[j].x = xy[0];
+				asteroids[j].y = xy[1];
+
+				asteroids[j].level = random(1, 4);
+
+				asteroids[j].speed = 2 * 3 / asteroids[j].level + 1;
+
+				char path[100];
+				sprintf_s(path, "assets/sprites/asteroid_%d.png", asteroids[j].level);
+				asteroids[j].bitmap = al_load_bitmap(path);
+				asteroids[j].live = true;
+				break;
+			}
 		}
 	}
 }
@@ -339,10 +419,13 @@ void updateAsteroids(Asteroid asteroids[], int size, SpaceShip &ship)
 			asteroids[i].x = asteroids[i].x + lroundf(directionX * asteroids[i].speed);
 			asteroids[i].y = asteroids[i].y + lroundf(directionY * asteroids[i].speed);
 
-			if (asteroids[i].x > ship.x - 12 &&
-				asteroids[i].x < ship.x + 12 &&
-				asteroids[i].y > ship.y - 12 &&
-				asteroids[i].y < ship.y + 12) {
+			int shipWidth = al_get_bitmap_width(ship.bitmap) / 2;
+			int shipHeight = al_get_bitmap_height(ship.bitmap) / 2;
+
+			if (asteroids[i].x > ship.x - shipWidth &&
+				asteroids[i].x < ship.x + shipWidth &&
+				asteroids[i].y > ship.y - shipHeight &&
+				asteroids[i].y < ship.y + shipHeight) {
 				asteroids[i].live = false;
 				ship.lives--;
 			}
@@ -350,21 +433,55 @@ void updateAsteroids(Asteroid asteroids[], int size, SpaceShip &ship)
 	}
 }
 
+void initCursor(Cursor& cursor)
+{
+	cursor.bitmap = al_load_bitmap("assets/sprites/cursor.png");
+}
+
+void hasClickedOnRestart(
+	Cursor& cursor,
+	Button& button,
+	SpaceShip& ship,
+	Asteroid asteroids[],
+	int NUM_ASTEROIDS,
+	Bullet bullets[],
+	int NUM_BULLETS,
+	BlackHole& blackHole,
+	bool& gameover
+)
+{
+	int endXButton = button.x + al_get_bitmap_width(button.bitmap);
+	int endYButton = button.y + al_get_bitmap_height(button.bitmap);
+
+	bool onXRange = cursor.x > button.x && cursor.x < endXButton;
+	bool onYRange = cursor.y > button.y && cursor.y < endYButton;
+	if (onXRange && onYRange) {
+		initShip(ship);
+		initAsteroids(asteroids, NUM_ASTEROIDS);
+		initBullets(bullets, NUM_BULLETS);
+		initBlackHole(blackHole);
+		gameover = false;
+	}
+}
+
 void drawInfos(SpaceShip& ship)
 {
 	char lives[12];
+	char level[14];
 	sprintf_s(lives, "%d", ship.lives);
-	al_draw_text(font, al_map_rgb(255, 255, 255), 50, 13, 0, lives);
+	al_draw_text(font[2], al_map_rgb(255, 255, 255), 90, 30, 0, lives);
 
-	al_draw_text(font, al_map_rgb(255, 255, 255), (mode.width / 2 - 90), 25, 0, "Level 1");
+	sprintf_s(level, "Level %d", ship.level);
+	int midX = al_get_text_width(font[2], level) / 2;
+	al_draw_text(font[2], al_map_rgb(255, 255, 255), (mode.width / 2 - midX), 32, 0, level);
 
 
 	al_draw_scaled_bitmap(ship.bitmap,
 		0, 0,                                // source origin
 		al_get_bitmap_width(ship.bitmap),    // source width
 		al_get_bitmap_height(ship.bitmap),   // source height
-		15, 15,                              // target origin
-		24, 24,                              // target dimensions
+		32, 32,                              // target origin
+		40, 40,                              // target dimensions
 		0                                    // flags
 	);
 }
@@ -379,18 +496,14 @@ void initBlackHole(BlackHole& blackHole)
 
 void drawBlackHole(BlackHole& blackHole)
 {
-	al_draw_rotated_bitmap(blackHole.bitmap,
+	al_draw_scaled_rotated_bitmap(blackHole.bitmap,
 		al_get_bitmap_width(blackHole.bitmap) / 2, al_get_bitmap_height(blackHole.bitmap) / 2,
-		blackHole.origin.x, blackHole.origin.y,
-		blackHole.angle,
-		0);
-	al_draw_rotated_bitmap(blackHole.bitmap,
-		al_get_bitmap_width(blackHole.bitmap) / 2,
-		al_get_bitmap_height(blackHole.bitmap) / 2,
-		blackHole.destiny.x,
-		blackHole.destiny.y,
-		blackHole.angle,
-		0);
+		blackHole.origin.x, blackHole.origin.y, 0.5, 0.5,
+		blackHole.angle, 0);
+	al_draw_scaled_rotated_bitmap(blackHole.bitmap,
+		al_get_bitmap_width(blackHole.bitmap) / 2, al_get_bitmap_height(blackHole.bitmap) / 2,
+		blackHole.destiny.x, blackHole.destiny.y, 0.5, 0.5,
+		blackHole.angle, 0);
 }
 
 void updateBlackHole(BlackHole& blackHole)
@@ -466,12 +579,17 @@ void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip &
 			bullets[i].angle = PI - angle;
 			ship.angle = PI - angle;
 
-			if (bullets[i].x > asteroids[bullets[i].target].x - 16 &&
-				bullets[i].x < asteroids[bullets[i].target].x + 16 &&
-				bullets[i].y > asteroids[bullets[i].target].y - 16 &&
-				bullets[i].y < asteroids[bullets[i].target].y + 16) {
+			int asteroidWidth = al_get_bitmap_width(asteroids[bullets[i].target].bitmap);
+			int asteroidHeight = al_get_bitmap_height(asteroids[bullets[i].target].bitmap);
+
+			if (bullets[i].x > asteroids[bullets[i].target].x &&
+				bullets[i].x < asteroids[bullets[i].target].x + asteroidWidth &&
+				bullets[i].y > asteroids[bullets[i].target].y &&
+				bullets[i].y < asteroids[bullets[i].target].y + asteroidHeight) {
 				bullets[i].live = false;
 				asteroids[bullets[i].target].live = false;
+				ship.kill++;
+				ship.score += asteroids[bullets[i].target].level * 2;
 			}
 		}
 	}

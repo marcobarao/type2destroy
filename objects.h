@@ -10,7 +10,9 @@ struct SpaceShip
 	int lives;
 	int speed;
 	float angle;
+	int level;
 	int score;
+	int kill;
 	ALLEGRO_BITMAP* bitmap;
 };
 
@@ -34,6 +36,20 @@ struct Bullet
 	int speed;
 	float angle;
 	int target;
+	ALLEGRO_BITMAP* bitmap;
+};
+
+struct Cursor
+{
+	int x;
+	int y;
+	ALLEGRO_BITMAP* bitmap;
+};
+
+struct Button
+{
+	int x;
+	int y;
 	ALLEGRO_BITMAP* bitmap;
 };
 
