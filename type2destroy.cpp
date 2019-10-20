@@ -11,13 +11,28 @@
 #include <math.h>
 #include <float.h>
 #include "objects.h"
+#include <Windows.h>
 
 #define PI 3.14159265
 
 const int NUM_BULLETS = 5;
 const int NUM_ASTEROIDS = 10;
-enum KEYS { F, B, SPACE };
-bool keys[3] = { false, false, false };
+
+const char* tiny[] = {
+	"IR", "UM", "EM", "EU", "DE", "SE", "OU", "ME", "DA", "AO", "LI", "NO", "OI", "NA", "NU", "TU", "DO", "TI", "OS", "AS", "TE", "EI", "RI", "LA", "KG", "SOB", "PAZ", "MAL", "VER", "SER", "EGO", "TER", "BEM", "VIR", "DAR", "BOM", "MAS", "ELO", "VÓ", "ERA", "TAL", "DIA", "ORA", "LUZ", "TEZ", "COM", "ATO", "DOR", "DOU", "EIS", "FÉ", "NÓ", "MIM", "LER", "FIZ", "PRO", "VOO", "DOM", "NUM", "HÁ", "SEM", "MAU", "UMA", "SÓ", "RUA", "JÁ", "SOL", "LEI", "QUE", "AJO", "LUA", "FOI", "RIO", "PAU", "NAU", "SEU", "ODE", "SÃ", "DÓ", "ECO", "VOZ", "FIM", "FEZ", "NEM", "IDO", "MEU", "SIM", "VEZ" "VIA", "BOI", "REI", "JUS", "PAI", "ASA", "SUB", "SOM", "TEM", "UNS", "ALI", "FOR", "RIR", "VÔ", "AGI", "AÍ", "POR", "LHE", "BOA", "USO", "TOA", "SAL", "SÊ", "RÉ", "AMO", "UFA", "SUA", "VAN", "PRA", "COR", "CIA", "LÁ", "CAL", "OVO", "NOS", "PAR", "TOM", "KIT", "FIO", "MAR", "IRA", "GIZ", "LAR", "UAU", "TÁ", "RIM", "ANO", "PUS", "NOZ", "TOP", "MEL", "ELE", "CEM", "FÃ", "PIA", "CIO", "OBA", "FOZ", "TIO", "ELA", "IDA", "AVE", "TÔ", "PÉ", "TUA", "PÓ", "UVA", "DUM", "MÁ", "PÁ", "TEU", "ARO", "VÊ", "CRU", "GOL", "DEZ", "AMA", "TIA", "RÃ", "EXU", "PIO", "ÁS", "NÉ", "DEU", "LEU", "AOS", "ZEN", "NAS", "CÁ" "GAZ", "OCO", "ALA", "DEI", "MIL", "RUM", "OPA", "LIA", "UÉ", "NUA", "SUL", "OCA", "TÊ", "WEB", "RIA", "FAX", "PÔ", "SAI", "TIL", "GEL", "LÃ", "OVA", "XIS"
+};
+
+const char* smalll[] = {
+	"AMOR", "FATO", "MITO", "CÉU", "SEDE", "NÃO", "APTO", "POIS", "CRER", "VÃO", "CAOS", "AUGE", "RÉU", "TOLO", "COTA", "RUIM" "ENTE" "SOAR", "URGE", "PUDE", "VIDA", "CEDO", "COMO", "RIMA", "ZELO", "MEDO", "SELA", "CELA", "FASE", "CUJO", "NOJO", "ONDE" "FACE", "POSE", "ALVA", "TEVE", "CASA", "ALVO", "BASE", "NEXO", "TEOR", "NUMA", "MÃE", "ANTE", "REGE", "AUTO", "TUDO", "RUDE", "VALE", "SAGA", "MAIS", "TRAZ", "IDEM", "TODO", "ALTA", "LOGO", "MERO", "ALTO", "DOCE", "DEUS", "PARA", "JÓIA", "META", "FORA", "EITA", "PROL", "ALMA", "PELO", "NOVO", "ALGO", "FRIO", "PELA", "TESE", "HAJA", "ATÉ", "SAGAZ", "MEXER", "TERMO", "SENSO", "NOBRE", "PLENA", "AFETO", "SUTIL", "DESDE", "INATO", "VIGOR", "SERIA", "FAZER","IDEIA", "SANAR", "ANEXO", "APÓS", "TORPE", "PODER", "JUSTO", "LAPSO", "ASSIM", "HONRA", "MORAL", "MUITO", "EXPOR", "POSSE", "DIGNO", "PESAR", "GENRO" "ÁREA", "DIZER", "ALÉM", "FOSSE", "CAUSA", "DENSO", "CEDER", "COMUM", "DEVER", "CENSO", "CULTO", "SABER", "LOUCO", "FLUIR", "ONTEM", "MANSO", "IMPOR", "PLENO", "REGRA", "JEITO", "DESSE", "SONHO", "VALHA", "TEMOR", "PUDOR", "MUNDO", "SOBRE", "CISMA", "TEMPO", "CRIAR", "SENDO", "ENFIM", "FORTE", "SERVO", "AINDA", "ETNIA", "GERAR", "VOCÊ", "ESTAR", "SENIL", "OBTER", "PEDIR", "FALAR", "VISAR", "AMIGO"
+};
+
+const char* medium[] = {
+	"EXCETO",  "VEREDA",  " MAGO", "ÊXITO", "PRESSA", "INFAME", "CASUAL", "ADORNO", "NOCIVO", "ALHEIO", "ESCOPO", "GENTIL", "MÚTUA", "HOSTIL" "PORÉM", "DIFUSO", "LEGADO", "AFERIR", "FORMAL", "SOLENE", "ÉTICA", "EFICAZ" "ASTUTO", "JULGAR", "ABSTER", "LIMIAR" "DISPOR", "AÇÃO", "OCIOSO" "MÚTUO", "EXIMIR", "ISENTO", "RECEIO" "ACENTO", "DETÉM", "RAZÃO", "EMBORA", "ALOCAR", "FÚTIL", "HÁBIL", "OBJETO", "RANCOR", "PROVER", "COAGIR", " NSIA", "MAROTO", "VEDADO", "ÍCONE", "BUSCAR", "VULGAR", "EMPATIA", "PROLIXO",  " MBITO", "CÍNICO", "SUBLIME", "SUCINTO", "ÍNDOLE", "CONVÉM", "RECESSO" "CINISMO", "INFERIR", "MÉRITO", "REFUTAR", "CORDIAL", "ÊNFASE", "EMERGIR", "VERBETE", "ADESÃO", "TRIVIAL", "SEÇÃO", "JÚBILO", "ASPECTO", "EXCESSO", "EXILADO", "REDIMIR", "ALMEJAR" "CONCISO", "VIRTUDE", "PADECER", "DÁDIVA", "COLOSSO", "CESSÃO", "MITIGAR", "ALCUNHA", "SALUTAR", "INCAUTO", "SENSATO", "SÁDICO", "HÁBITO", "INTENSO", "ASSENTO", "PAIXÃO", "EMOTIVO", "ÊXTASE", "EXÍLIO", "INDAGAR", "HESITAR", "PARCIAL", "SUCESSO",  "GLÓRIA"
+};
+
+const char* big[] = {
+	"INERENTE", "PECULIAR", "PRUDENTE", "PÊSAMES", "DEFERIDO", "INVASIVO", "GENUÍNO", "RESPEITO", "ALIENADO", "REITERAR", "AUDÁCIA", "PRÓDIGO", "ABSTRATO", "ESTÁVEL", "CONSERTO", "APOLOGIA", "ASTÚCIA", "CONCEITO", "PREMISSA", "DEVANEIO", "PERSPICAZ", "RETIFICAR", "PLENITUDE", "EXTENSÃO", "ESSENCIAL", "PARADIGMA", "HEGEMONIA" "RATIFICAR", "DELIBERAR" "PRODÍGIO", "INCIDENTE", "RESIGNADO", "PERSUADIR", "DICOTOMIA", "PASSÍVEL", "DEMASIADO", "ASCENSÃO", "DESDENHAR", "MESQUINHO", "MODÉSTIA", "PRESCINDIR", "IMPRESSÃO", "CORROBORAR", "CONCESSÃO", "SUPÉRFLUO", "ESCRÚPULO", "IMPLÍCITO", "DETRIMENTO", "MATURIDADE", "INDULGENTE"
+};
 
 ALLEGRO_DISPLAY* display = NULL;
 ALLEGRO_EVENT_QUEUE* queue = NULL;
@@ -46,25 +61,30 @@ void drawInfos(SpaceShip& ship);
 
 void initAsteroids(Asteroid asteroids[], int size);
 void drawAsteroids(Asteroid asteroids[], int size);
-void updateAsteroids(Asteroid asteroids[], int size, SpaceShip &ship);
+void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship);
 void createAsteroid(Asteroid asteroids[], int size, int level);
 int* generateAsteroidXY();
 
-void initBlackHole(BlackHole &blackHole);
-void drawBlackHole(BlackHole &blackHole);
-void updateBlackHole(BlackHole &blackHole);
-void createBlackHole(BlackHole &blackHole);
+void initBlackHole(BlackHole& blackHole);
+void drawBlackHole(BlackHole& blackHole);
+void updateBlackHole(BlackHole& blackHole);
+void createBlackHole(BlackHole& blackHole);
 struct Coord* generateOriginDestiny();
 
 void initBullets(Bullet bullets[], int size);
 void drawBullets(Bullet bullets[], int size);
 void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip& ship);
-void createBullet(Bullet bullet[], int sizeBullet, SpaceShip &ship, Asteroid asteroids[], int sizeAsteroids);
-int findTarget(SpaceShip& ship, Asteroid asteroids[], int size);
+void createBullet(Bullet bullet[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids);
+int findBulletTarget(SpaceShip& ship, Asteroid asteroids[], int size);
+void updateShip(BlackHole& blackhole, SpaceShip& ship);
+void hasClickedOnBlackHole(Cursor& cursor, SpaceShip& ship, BlackHole& blackHole);
+
+void removeChar(int keyCode, Bullet bullets[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids, ALLEGRO_SAMPLE* laser);
+int findAsteroidToRemoveChar(int keyCode, SpaceShip& ship, Asteroid asteroids[], int size);
 
 int random(int lower, int upper);
 
-void showErrorMsg(const char *text) {
+void showErrorMsg(const char* text) {
 	al_show_native_message_box(display, "ERRO",
 		"Ocorreu o seguinte erro e o programa sera finalizado:",
 		text, NULL, ALLEGRO_MESSAGEBOX_ERROR);
@@ -163,6 +183,7 @@ int main()
 	bool close = false;
 	bool gameover = false;
 	bool redraw = true;
+	char input[1] = "";
 
 	SpaceShip ship;
 	Asteroid asteroids[NUM_ASTEROIDS];
@@ -180,10 +201,10 @@ int main()
 	int mapSize = 100;
 	int tileSize = 256;
 
+	al_reserve_samples(2);
+
 	ALLEGRO_SAMPLE* laser = al_load_sample("assets/audio/sfx_laser2.ogg");
 	ALLEGRO_SAMPLE* env = al_load_sample("assets/audio/loop_env.wav");
-
-	al_reserve_samples(2);
 
 	al_play_sample(env, 0.2, 0.0, 1.3, ALLEGRO_PLAYMODE_LOOP, 0);
 
@@ -199,63 +220,39 @@ int main()
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(queue, &ev);
 		float seconds;
-		
+
 		switch (ev.type) {
-			case ALLEGRO_EVENT_TIMER:
-				redraw = true;
-				seconds = al_get_timer_count(timer) / 100.0;
-				srand(time(NULL));
+		case ALLEGRO_EVENT_TIMER:
+			redraw = true;
+			seconds = al_get_timer_count(timer) / 100.0;
+			srand(time(NULL));
 
-				if (ship.kill > ship.level * 4) {
-					ship.level++;
-				}
+			if (ship.kill > ship.level * 4) {
+				ship.level++;
+			}
 
-				if (((int) seconds == seconds) && ((int) seconds) % 2 == 0) {
-					createAsteroid(asteroids, NUM_ASTEROIDS, ship.level);
-				}
+			if (((int)seconds == seconds) && ((int)seconds) % 2 == 0) {
+				createAsteroid(asteroids, NUM_ASTEROIDS, ship.level);
+			}
 
-				updateAsteroids(asteroids, NUM_ASTEROIDS, ship);
-				updateBlackHole(blackHole);
-				updateBullets(bullets, NUM_BULLETS, asteroids, ship);
-				break;
-			case ALLEGRO_EVENT_DISPLAY_CLOSE:
-				close = true;
-				break;
-			case ALLEGRO_EVENT_KEY_DOWN:
-				switch (ev.keyboard.keycode) {
-					case ALLEGRO_KEY_SPACE:
-						keys[SPACE] = true;
-						createAsteroid(asteroids, NUM_ASTEROIDS, ship.level);
-						break;
-					case ALLEGRO_KEY_F:
-						keys[F] = true;
-						al_play_sample(laser, 1.0, 0.0, 2.0, ALLEGRO_PLAYMODE_ONCE, 0);
-						createBullet(bullets, NUM_BULLETS, ship, asteroids, NUM_ASTEROIDS);
-						break;
-					case ALLEGRO_KEY_B:
-						keys[B] = true;
-						createBlackHole(blackHole);
-						break;
-				}
-			case ALLEGRO_EVENT_KEY_UP:
-				switch (ev.keyboard.keycode) {
-				case ALLEGRO_KEY_SPACE:
-					keys[SPACE] = false;
-					break;
-				case ALLEGRO_KEY_F:
-					keys[F] = false;
-					break;
-				}
-				case ALLEGRO_KEY_B:
-					keys[B] = false;
-					break;
-				case ALLEGRO_EVENT_MOUSE_AXES:
-					cursor.x = ev.mouse.x;
-					cursor.y = ev.mouse.y;
-					break;
-				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
-					hasClickedOnRestart(cursor, restart, ship, asteroids, NUM_ASTEROIDS, bullets, NUM_BULLETS, blackHole, gameover);
-					break;
+			updateAsteroids(asteroids, NUM_ASTEROIDS, ship);
+			updateBlackHole(blackHole);
+			updateBullets(bullets, NUM_BULLETS, asteroids, ship);
+			break;
+		case ALLEGRO_EVENT_DISPLAY_CLOSE:
+			close = true;
+			break;
+		case ALLEGRO_EVENT_KEY_UP:
+			removeChar(ev.keyboard.keycode + 64, bullets, NUM_BULLETS, ship, asteroids, NUM_ASTEROIDS, laser);
+			break;
+		case ALLEGRO_EVENT_MOUSE_AXES:
+			cursor.x = ev.mouse.x;
+			cursor.y = ev.mouse.y;
+			break;
+		case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+			hasClickedOnRestart(cursor, restart, ship, asteroids, NUM_ASTEROIDS, bullets, NUM_BULLETS, blackHole, gameover);
+			hasClickedOnBlackHole(cursor, ship, blackHole);
+			break;
 		}
 
 		if (redraw && al_is_event_queue_empty(queue)) {
@@ -272,7 +269,7 @@ int main()
 				al_clear_to_color(al_map_rgba(0, 0, 0, 0.5));
 				int midX = al_get_text_width(font[4], string) / 2;
 				int midY = al_get_font_line_height(font[4]) / 2;
-				al_draw_text(font[4], al_map_rgb(255, 255, 255), (mode.width / 2 - midX), mode.height / 2 - midY, 20, string);
+				al_draw_text(font[4], al_map_rgb(255, 255, 255), (mode.width / 2 - midX), mode.height / 2 - (midY + 60), 20, string);
 				al_draw_bitmap(restart.bitmap, restart.x, restart.y, 0);
 			}
 			else {
@@ -303,17 +300,18 @@ int main()
 void initRestart(Button& button)
 {
 	button.x = mode.width / 2 - 140;
-	button.y = mode.height / 2 + 80;
+	button.y = mode.height / 2 + 20;
 	button.bitmap = al_load_bitmap("assets/sprites/restart.png");
 }
 
 void initShip(SpaceShip& ship) {
-	ship.x = mode.width / 2 - 32;
-	ship.y = mode.height / 2 - 32;
+	ship.x = mode.width / 2;
+	ship.y = mode.height / 2;
 	ship.ID = PLAYER;
 	ship.lives = 3;
 	ship.kill = 0;
 	ship.level = 1;
+	ship.speed = 8;
 	ship.bitmap = al_load_bitmap("assets/sprites/ship.png");
 }
 
@@ -332,6 +330,8 @@ void initAsteroids(Asteroid asteroids[], int size)
 		asteroids[i].speed = 8;
 		asteroids[i].live = false;
 		asteroids[i].level = 1;
+		asteroids[i].idxChar = 0;
+		asteroids[i].word = al_ustr_new("");
 		asteroids[i].bitmap = al_load_bitmap("assets/sprites/asteroid_1.png");
 	}
 }
@@ -340,8 +340,13 @@ void drawAsteroids(Asteroid asteroids[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		if (asteroids[i].live)
+		if (asteroids[i].live) {
 			al_draw_bitmap(asteroids[i].bitmap, asteroids[i].x, asteroids[i].y, 0);
+			int x = asteroids[i].x + al_get_bitmap_width(asteroids[i].bitmap) / 2 - al_get_ustr_width(font[0], asteroids[i].word) / 2;
+			int y = asteroids[i].y + al_get_bitmap_height(asteroids[i].bitmap) + 10;
+			al_draw_ustr(font[0], al_map_rgb(255, 255, 255), x, y, 0, asteroids[i].word);
+			al_draw_ustr(font[0], al_map_rgb(255, 255, 0), x, y, 0, al_ustr_dup_substr(asteroids[i].word, 0, asteroids[i].idxChar));
+		}
 	}
 }
 
@@ -355,12 +360,17 @@ void createAsteroid(Asteroid asteroids[], int size, int level)
 			if (!asteroids[j].live)
 			{
 				int* xy = generateAsteroidXY();
+				const char** word[] = { tiny, smalll, medium, big };
 				asteroids[j].x = xy[0];
 				asteroids[j].y = xy[1];
 
 				asteroids[j].level = random(1, 4);
 
 				asteroids[j].speed = 2 * 3 / asteroids[j].level + 1;
+
+				asteroids[j].idxChar = 0;
+
+				asteroids[j].word = al_ustr_new(word[asteroids[j].level - 1][random(0, 200 - (asteroids[j].level - 1) * 50)]);
 
 				char path[100];
 				sprintf_s(path, "assets/sprites/asteroid_%d.png", asteroids[j].level);
@@ -383,28 +393,28 @@ int* generateAsteroidXY() {
 
 	switch (side)
 	{
-		case 0:
-			coord[0] = random(0, mode.width);
-			coord[1] = 0;
-			break;
-		case 1:
-			coord[0] = mode.width;
-			coord[1] = random(0, mode.height);
-			break;
-		case 2:
-			coord[0] = random(0, mode.width);
-			coord[1] = mode.height;
-			break;
-		case 3:
-			coord[0] = 0;
-			coord[1] = random(0, mode.height);
-			break;
+	case 0:
+		coord[0] = random(0, mode.width);
+		coord[1] = 0;
+		break;
+	case 1:
+		coord[0] = mode.width;
+		coord[1] = random(0, mode.height);
+		break;
+	case 2:
+		coord[0] = random(0, mode.width);
+		coord[1] = mode.height;
+		break;
+	case 3:
+		coord[0] = 0;
+		coord[1] = random(0, mode.height);
+		break;
 	}
 
 	return coord;
 }
 
-void updateAsteroids(Asteroid asteroids[], int size, SpaceShip &ship)
+void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -429,6 +439,44 @@ void updateAsteroids(Asteroid asteroids[], int size, SpaceShip &ship)
 				asteroids[i].live = false;
 				ship.lives--;
 			}
+		}
+	}
+}
+
+void updateShip(BlackHole& blackhole, SpaceShip& ship)
+{
+	if (blackhole.live)
+	{
+		int deltaX = ship.x - blackhole.origin.x;
+		int deltaY = ship.y - blackhole.origin.y;
+		float distance = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
+		float directionX = deltaX / distance;
+		float directionY = deltaY / distance;
+
+		int deltaX2 = ship.x - blackhole.destiny.x;
+		int deltaY2 = ship.y - blackhole.destiny.y;
+		float distance2 = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
+		float directionX2 = deltaX2 / distance2;
+		float directionY2 = deltaY2 / distance2;
+
+
+
+		ship.x = blackhole.origin.x + lroundf(directionX * ship.speed);
+		ship.y = blackhole.origin.y + lroundf(directionY * ship.speed);
+
+		Sleep(1);
+
+		ship.x = blackhole.destiny.x + lroundf(directionX2 * ship.speed);
+		ship.y = blackhole.destiny.y + lroundf(directionY2 * ship.speed);
+
+		int shipWidth = al_get_bitmap_width(ship.bitmap) / 2;
+		int shipHeight = al_get_bitmap_height(ship.bitmap) / 2;
+
+		if (ship.x > ship.x - shipWidth &&
+			ship.x < ship.x + shipWidth &&
+			ship.y > ship.y - shipHeight &&
+			ship.y < ship.y + shipHeight) {
+			blackhole.live = false;
 		}
 	}
 }
@@ -461,6 +509,22 @@ void hasClickedOnRestart(
 		initBullets(bullets, NUM_BULLETS);
 		initBlackHole(blackHole);
 		gameover = false;
+	}
+}
+
+void hasClickedOnBlackHole(
+	Cursor& cursor,
+	SpaceShip& ship,
+	BlackHole& blackHole
+)
+{
+	int endXButton = blackHole.origin.x + al_get_bitmap_width(blackHole.bitmap);
+	int endYButton = blackHole.origin.y + al_get_bitmap_height(blackHole.bitmap) + 10;
+
+	bool onXRange = cursor.x > blackHole.origin.x && cursor.x < endXButton;
+	bool onYRange = cursor.y > blackHole.origin.y && cursor.y < endYButton;
+	if (onXRange && onYRange) {
+		updateShip(blackHole, ship);
 	}
 }
 
@@ -530,7 +594,7 @@ struct Coord* generateOriginDestiny()
 	}
 
 	return originDestiny;
-}  
+}
 
 void initBullets(Bullet bullets[], int size)
 {
@@ -558,7 +622,7 @@ void drawBullets(Bullet bullets[], int size)
 	}
 }
 
-void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip &ship)
+void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip& ship)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -597,7 +661,7 @@ void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip &
 
 void createBullet(Bullet bullet[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids)
 {
-	int target = findTarget(ship, asteroids, sizeAsteroids);
+	int target = findBulletTarget(ship, asteroids, sizeAsteroids);
 
 	for (int i = 0; i < sizeBullet; i++)
 	{
@@ -612,7 +676,7 @@ void createBullet(Bullet bullet[], int sizeBullet, SpaceShip& ship, Asteroid ast
 	}
 }
 
-int findTarget(SpaceShip& ship, Asteroid asteroids[], int size)
+int findBulletTarget(SpaceShip& ship, Asteroid asteroids[], int size)
 {
 	struct target {
 		int idx;
@@ -630,7 +694,47 @@ int findTarget(SpaceShip& ship, Asteroid asteroids[], int size)
 			int deltaY = ship.y - asteroids[i].y;
 			float distance = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
 
-			if (distance < min.min) {
+			if (distance < min.min && asteroids[i].idxChar >= al_ustr_length(asteroids[i].word)) {
+				min.idx = i;
+				min.min = distance;
+			}
+		}
+	}
+
+	return min.idx;
+}
+
+void removeChar(int keyCode, Bullet bullets[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids, ALLEGRO_SAMPLE* laser) {
+	int index = findAsteroidToRemoveChar(keyCode, ship, asteroids, sizeAsteroids);
+	if (index >= 0) {
+		asteroids[index].idxChar++;
+
+		if (asteroids[index].idxChar >= al_ustr_length(asteroids[index].word)) {
+			al_play_sample(laser, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
+			createBullet(bullets, sizeBullet, ship, asteroids, sizeAsteroids);
+		}
+	}
+}
+
+int findAsteroidToRemoveChar(int keyCode, SpaceShip& ship, Asteroid asteroids[], int size) {
+	struct target {
+		int idx;
+		int min;
+	};
+
+	struct target min;
+	min.idx = -1;
+	min.min = INT_MAX;
+
+	for (int i = 0; i < size; i++)
+	{
+		if (asteroids[i].live) {
+			int deltaX = ship.x - asteroids[i].x;
+			int deltaY = ship.y - asteroids[i].y;
+			float distance = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
+
+			int nextKeyCode = al_ustr_get(asteroids[i].word, asteroids[i].idxChar);
+			if (distance < min.min && keyCode == nextKeyCode) {
 				min.idx = i;
 				min.min = distance;
 			}

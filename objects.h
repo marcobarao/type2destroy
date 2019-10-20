@@ -13,6 +13,8 @@ struct SpaceShip
 	int level;
 	int score;
 	int kill;
+	int target;
+
 	ALLEGRO_BITMAP* bitmap;
 };
 
@@ -24,6 +26,8 @@ struct Asteroid
 	bool live;
 	int speed;
 	int level;
+	ALLEGRO_USTR *word;
+	int idxChar;
 	ALLEGRO_BITMAP* bitmap;
 };
 
@@ -55,6 +59,11 @@ struct Button
 
 struct Coord
 {
+	int x;
+	int y;
+};
+
+struct Guarda {
 	int x;
 	int y;
 };
