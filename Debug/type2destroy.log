@@ -1,6 +1,6 @@
 ﻿  type2destroy.cpp
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(706,51): warning C4018:  '>=': incompatibilidade de signed/unsigned
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(721,32): warning C4018:  '>=': incompatibilidade de signed/unsigned
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(417): warning C4172:  retornando o endereço da variável local ou temporário: coord
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(605): warning C4172:  retornando o endereço da variável local ou temporário: originDestiny
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(715,51): warning C4018:  '>=': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(730,32): warning C4018:  '>=': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(423): warning C4172:  retornando o endereço da variável local ou temporário: coord
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\type2destroy.cpp(614): warning C4172:  retornando o endereço da variável local ou temporário: originDestiny
   type2destroy.vcxproj -> C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\Debug\type2destroy.exe

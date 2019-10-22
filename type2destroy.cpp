@@ -41,6 +41,7 @@ ALLEGRO_EVENT_QUEUE* queue = NULL;
 ALLEGRO_TIMER* timer = NULL;
 ALLEGRO_DISPLAY_MODE mode;
 ALLEGRO_FONT* font[5];
+ALLEGRO_FONT* wordFont;
 
 void initShip(SpaceShip& ship);
 void drawShip(SpaceShip& ship);
@@ -115,6 +116,11 @@ int initGame() {
 		if (!font[i]) {
 			showErrorMsg("Falha ao carregar a fonte");
 		}
+	}
+
+	wordFont = al_load_ttf_font("./assets/fonts/space_mono.ttf", 24, 0);
+	if (!wordFont) {
+		showErrorMsg("Falha ao carregar o space mono");
 	}
 
 	if (!al_init_image_addon()) {
@@ -319,7 +325,7 @@ void initShip(SpaceShip& ship) {
 
 void drawShip(SpaceShip& ship) {
 	al_draw_scaled_rotated_bitmap(ship.bitmap,
-		al_get_bitmap_width(ship.bitmap) / 4, al_get_bitmap_height(ship.bitmap) / 4,
+		al_get_bitmap_width(ship.bitmap) / 2, al_get_bitmap_height(ship.bitmap) / 2,
 		ship.x, ship.y, 0.5, 0.5,
 		ship.angle, 0);
 }
@@ -344,17 +350,17 @@ void drawAsteroids(Asteroid asteroids[], int size)
 	{
 		if (asteroids[i].live) {
 			al_draw_bitmap(asteroids[i].bitmap, asteroids[i].x, asteroids[i].y, 0);
-			int x = asteroids[i].x + al_get_bitmap_width(asteroids[i].bitmap) / 2 - al_get_ustr_width(font[0], asteroids[i].word) / 2;
+			int x = asteroids[i].x + al_get_bitmap_width(asteroids[i].bitmap) / 2 - al_get_ustr_width(wordFont, asteroids[i].word) / 2;
 			int y = asteroids[i].y + al_get_bitmap_height(asteroids[i].bitmap) + 10;
-			al_draw_ustr(font[0], al_map_rgb(255, 255, 255), x, y, 0, asteroids[i].word);
-			al_draw_ustr(font[0], al_map_rgb(255, 255, 0), x, y, 0, al_ustr_dup_substr(asteroids[i].word, 0, asteroids[i].idxChar));
+			al_draw_ustr(wordFont, al_map_rgb(255, 255, 255), x, y, 0, asteroids[i].word);
+			al_draw_ustr(wordFont, al_map_rgb(255, 255, 0), x, y, 0, al_ustr_dup_substr(asteroids[i].word, 0, asteroids[i].idxChar));
 		}
 	}
 }
 
 void createAsteroid(Asteroid asteroids[], int size, int level, float seconds)
 {
-	int qtAsteroids = random(1, 3);
+	int qtAsteroids = random(1, min(level, 3));
 
 	for (int i = 1; i <= qtAsteroids; i++) {
 		for (int j = 0; j < size; j++)
@@ -441,10 +447,13 @@ void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship, float seco
 			int shipWidth = al_get_bitmap_width(ship.bitmap) / 2;
 			int shipHeight = al_get_bitmap_height(ship.bitmap) / 2;
 
-			if (asteroids[i].x > ship.x - shipWidth &&
-				asteroids[i].x < ship.x + shipWidth &&
-				asteroids[i].y > ship.y - shipHeight &&
-				asteroids[i].y < ship.y + shipHeight) {
+			int asteroidWidth = al_get_bitmap_width(asteroids[i].bitmap) / 2;
+			int asteroidHeight = al_get_bitmap_height(asteroids[i].bitmap) / 2;
+
+			if (asteroids[i].x > (ship.x - shipWidth) &&
+				asteroids[i].x < (ship.x + shipWidth) &&
+				asteroids[i].y > (ship.y - shipHeight) &&
+				asteroids[i].y < (ship.y + shipHeight)) {
 				asteroids[i].live = false;
 				ship.lives--;
 			}
