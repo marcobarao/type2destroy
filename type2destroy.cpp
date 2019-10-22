@@ -19,20 +19,22 @@ const int NUM_BULLETS = 5;
 const int NUM_ASTEROIDS = 10;
 
 const char* tiny[] = {
-	"IR", "UM", "EM", "EU", "DE", "SE", "OU", "ME", "DA", "AO", "LI", "NO", "OI", "NA", "NU", "TU", "DO", "TI", "OS", "AS", "TE", "EI", "RI", "LA", "KG", "SOB", "PAZ", "MAL", "VER", "SER", "EGO", "TER", "BEM", "VIR", "DAR", "BOM", "MAS", "ELO", "VÓ", "ERA", "TAL", "DIA", "ORA", "LUZ", "TEZ", "COM", "ATO", "DOR", "DOU", "EIS", "FÉ", "NÓ", "MIM", "LER", "FIZ", "PRO", "VOO", "DOM", "NUM", "HÁ", "SEM", "MAU", "UMA", "SÓ", "RUA", "JÁ", "SOL", "LEI", "QUE", "AJO", "LUA", "FOI", "RIO", "PAU", "NAU", "SEU", "ODE", "SÃ", "DÓ", "ECO", "VOZ", "FIM", "FEZ", "NEM", "IDO", "MEU", "SIM", "VEZ" "VIA", "BOI", "REI", "JUS", "PAI", "ASA", "SUB", "SOM", "TEM", "UNS", "ALI", "FOR", "RIR", "VÔ", "AGI", "AÍ", "POR", "LHE", "BOA", "USO", "TOA", "SAL", "SÊ", "RÉ", "AMO", "UFA", "SUA", "VAN", "PRA", "COR", "CIA", "LÁ", "CAL", "OVO", "NOS", "PAR", "TOM", "KIT", "FIO", "MAR", "IRA", "GIZ", "LAR", "UAU", "TÁ", "RIM", "ANO", "PUS", "NOZ", "TOP", "MEL", "ELE", "CEM", "FÃ", "PIA", "CIO", "OBA", "FOZ", "TIO", "ELA", "IDA", "AVE", "TÔ", "PÉ", "TUA", "PÓ", "UVA", "DUM", "MÁ", "PÁ", "TEU", "ARO", "VÊ", "CRU", "GOL", "DEZ", "AMA", "TIA", "RÃ", "EXU", "PIO", "ÁS", "NÉ", "DEU", "LEU", "AOS", "ZEN", "NAS", "CÁ" "GAZ", "OCO", "ALA", "DEI", "MIL", "RUM", "OPA", "LIA", "UÉ", "NUA", "SUL", "OCA", "TÊ", "WEB", "RIA", "FAX", "PÔ", "SAI", "TIL", "GEL", "LÃ", "OVA", "XIS"
+	"IR", "UM", "EM", "EU", "DE", "SE", "OU", "ME", "DA", "AO", "LI", "NO", "OI", "NA", "NU", "TU", "DO", "TI", "OS", "AS", "TE", "EI", "RI", "LA", "KG", "SOB", "PAZ", "MAL", "VER", "SER", "EGO", "TER", "BEM", "VIR", "DAR", "BOM", "MAS", "ELO", "VO", "ERA", "TAL", "DIA", "ORA", "LUZ", "TEZ", "COM", "ATO", "DOR", "DOU", "EIS", "FE", "NO", "MIM", "LER", "FIZ", "PRO", "VOO", "DOM", "NUM", "HA", "SEM", "MAU", "UMA", "SO", "RUA", "JA", "SOL", "LEI", "QUE", "AJO", "LUA", "FOI", "RIO", "PAU", "NAU", "SEU", "ODE", "SA", "DO", "ECO", "VOZ", "FIM", "FEZ", "NEM", "IDO", "MEU", "SIM", "VEZ", "VIA", "BOI", "REI", "JUS", "PAI", "ASA", "SUB", "SOM", "TEM", "UNS", "ALI", "FOR", "RIR", "VO", "AGI", "AI", "POR", "LHE", "BOA", "USO", "TOA", "SAL", "SE", "RE", "AMO", "UFA", "SUA", "VAN", "PRA", "COR", "CIA", "LA", "CAL", "OVO", "NOS", "PAR", "TOM", "KIT", "FIO", "MAR", "IRA", "GIZ", "LAR", "UAU", "TA", "RIM", "ANO", "PUS", "NOZ", "TOP", "MEL", "ELE", "CEM", "FA", "PIA", "CIO", "OBA", "FOZ", "TIO", "ELA", "IDA", "AVE", "TO", "PE", "TUA", "PO", "UVA", "DUM", "MA", "PA", "TEU", "ARO", "VE", "CRU", "GOL", "DEZ", "AMA", "TIA", "RA", "EXU", "PIO", "AS", "NE", "DEU", "LEU", "AOS", "ZEN", "NAS", "CA", "GAZ", "OCO", "ALA", "DEI", "MIL", "RUM", "OPA", "LIA", "UE", "NUA", "SUL", "OCA", "TE", "WEB", "RIA", "FAX", "PO", "SAI", "TIL", "GEL", "LA", "OVA", "XIS"
 };
 
 const char* smalll[] = {
-	"AMOR", "FATO", "MITO", "CÉU", "SEDE", "NÃO", "APTO", "POIS", "CRER", "VÃO", "CAOS", "AUGE", "RÉU", "TOLO", "COTA", "RUIM" "ENTE" "SOAR", "URGE", "PUDE", "VIDA", "CEDO", "COMO", "RIMA", "ZELO", "MEDO", "SELA", "CELA", "FASE", "CUJO", "NOJO", "ONDE" "FACE", "POSE", "ALVA", "TEVE", "CASA", "ALVO", "BASE", "NEXO", "TEOR", "NUMA", "MÃE", "ANTE", "REGE", "AUTO", "TUDO", "RUDE", "VALE", "SAGA", "MAIS", "TRAZ", "IDEM", "TODO", "ALTA", "LOGO", "MERO", "ALTO", "DOCE", "DEUS", "PARA", "JÓIA", "META", "FORA", "EITA", "PROL", "ALMA", "PELO", "NOVO", "ALGO", "FRIO", "PELA", "TESE", "HAJA", "ATÉ", "SAGAZ", "MEXER", "TERMO", "SENSO", "NOBRE", "PLENA", "AFETO", "SUTIL", "DESDE", "INATO", "VIGOR", "SERIA", "FAZER","IDEIA", "SANAR", "ANEXO", "APÓS", "TORPE", "PODER", "JUSTO", "LAPSO", "ASSIM", "HONRA", "MORAL", "MUITO", "EXPOR", "POSSE", "DIGNO", "PESAR", "GENRO" "ÁREA", "DIZER", "ALÉM", "FOSSE", "CAUSA", "DENSO", "CEDER", "COMUM", "DEVER", "CENSO", "CULTO", "SABER", "LOUCO", "FLUIR", "ONTEM", "MANSO", "IMPOR", "PLENO", "REGRA", "JEITO", "DESSE", "SONHO", "VALHA", "TEMOR", "PUDOR", "MUNDO", "SOBRE", "CISMA", "TEMPO", "CRIAR", "SENDO", "ENFIM", "FORTE", "SERVO", "AINDA", "ETNIA", "GERAR", "VOCÊ", "ESTAR", "SENIL", "OBTER", "PEDIR", "FALAR", "VISAR", "AMIGO"
+	"AMOR", "FATO", "MITO", "CEU", "SEDE", "NAO", "APTO", "POIS", "CRER", "VAO", "CAOS", "AUGE", "REU", "TOLO", "COTA", "RUIM", "ENTE", "SOAR", "URGE", "PUDE", "VIDA", "CEDO", "COMO", "RIMA", "ZELO", "MEDO", "SELA", "CELA", "FASE", "CUJO", "NOJO", "ONDE", "FACE", "POSE", "ALVA", "TEVE", "CASA", "ALVO", "BASE", "NEXO", "TEOR", "NUMA", "MAE", "ANTE", "REGE", "AUTO", "TUDO", "RUDE", "VALE", "SAGA", "MAIS", "TRAZ", "IDEM", "TODO", "ALTA", "LOGO", "MERO", "ALTO", "DOCE", "DEUS", "PARA", "JOIA", "META", "FORA", "EITA", "PROL", "ALMA", "PELO", "NOVO", "ALGO", "FRIO", "PELA", "TESE", "HAJA", "ATE", "SAGAZ", "MEXER", "TERMO", "SENSO", "NOBRE", "PLENA", "AFETO", "SUTIL", "DESDE", "INATO", "VIGOR", "SERIA", "FAZER","IDEIA", "SANAR", "ANEXO", "APOS", "TORPE", "PODER", "JUSTO", "LAPSO", "ASSIM", "HONRA", "MORAL", "MUITO", "EXPOR", "POSSE", "DIGNO", "PESAR", "GENRO", "AREA", "DIZER", "ALEM", "FOSSE", "CAUSA", "DENSO", "CEDER", "COMUM", "DEVER", "CENSO", "CULTO", "SABER", "LOUCO", "FLUIR", "ONTEM", "MANSO", "IMPOR", "PLENO", "REGRA", "JEITO", "DESSE", "SONHO", "VALHA", "TEMOR", "PUDOR", "MUNDO", "SOBRE", "CISMA", "TEMPO", "CRIAR", "SENDO", "ENFIM", "FORTE", "SERVO", "AINDA", "ETNIA", "GERAR", "VOCE", "ESTAR", "SENIL", "OBTER", "PEDIR", "FALAR", "VISAR", "AMIGO"
 };
 
 const char* medium[] = {
-	"EXCETO",  "VEREDA",  " MAGO", "ÊXITO", "PRESSA", "INFAME", "CASUAL", "ADORNO", "NOCIVO", "ALHEIO", "ESCOPO", "GENTIL", "MÚTUA", "HOSTIL" "PORÉM", "DIFUSO", "LEGADO", "AFERIR", "FORMAL", "SOLENE", "ÉTICA", "EFICAZ" "ASTUTO", "JULGAR", "ABSTER", "LIMIAR" "DISPOR", "AÇÃO", "OCIOSO" "MÚTUO", "EXIMIR", "ISENTO", "RECEIO" "ACENTO", "DETÉM", "RAZÃO", "EMBORA", "ALOCAR", "FÚTIL", "HÁBIL", "OBJETO", "RANCOR", "PROVER", "COAGIR", " NSIA", "MAROTO", "VEDADO", "ÍCONE", "BUSCAR", "VULGAR", "EMPATIA", "PROLIXO",  " MBITO", "CÍNICO", "SUBLIME", "SUCINTO", "ÍNDOLE", "CONVÉM", "RECESSO" "CINISMO", "INFERIR", "MÉRITO", "REFUTAR", "CORDIAL", "ÊNFASE", "EMERGIR", "VERBETE", "ADESÃO", "TRIVIAL", "SEÇÃO", "JÚBILO", "ASPECTO", "EXCESSO", "EXILADO", "REDIMIR", "ALMEJAR" "CONCISO", "VIRTUDE", "PADECER", "DÁDIVA", "COLOSSO", "CESSÃO", "MITIGAR", "ALCUNHA", "SALUTAR", "INCAUTO", "SENSATO", "SÁDICO", "HÁBITO", "INTENSO", "ASSENTO", "PAIXÃO", "EMOTIVO", "ÊXTASE", "EXÍLIO", "INDAGAR", "HESITAR", "PARCIAL", "SUCESSO",  "GLÓRIA"
+	"EXCETO", "VEREDA", "AMAGO", "EXITO", "PRESSA", "INFAME", "CASUAL", "ADORNO", "NOCIVO", "ALHEIO", "ESCOPO", "GENTIL", "MUTUA", "HOSTIL", "POREM", "DIFUSO", "LEGADO", "AFERIR", "FORMAL", "SOLENE", "ETICA", "EFICAZ", "ASTUTO", "JULGAR", "ABSTER", "LIMIAR", "DISPOR", "ACAO", "OCIOSO", "MUTUO", "EXIMIR", "ISENTO", "RECEIO", "ACENTO", "DETEM", "RAZAO", "EMBORA", "ALOCAR", "FUTIL", "HABIL", "OBJETO", "RANCOR", "PROVER", "COAGIR", "ANSIA", "MAROTO", "VEDADO", "ICONE", "BUSCAR", "VULGAR", "EMPATIA", "PROLIXO", "AMBITO", "CINICO", "SUBLIME", "SUCINTO", "INDOLE", "CONVEM", "RECESSO", "CINISMO", "INFERIR", "MERITO", "REFUTAR", "CORDIAL", "ENFASE", "EMERGIR", "VERBETE", "ADESAO", "TRIVIAL", "SECAO", "JUBILO", "ASPECTO", "EXCESSO", "EXILADO", "REDIMIR", "ALMEJAR", "CONCISO", "VIRTUDE", "PADECER", "DADIVA", "COLOSSO", "CESSAO", "MITIGAR", "ALCUNHA", "SALUTAR", "INCAUTO", "SENSATO", "SADICO", "HABITO", "INTENSO", "ASSENTO", "PAIXAO", "EMOTIVO", "EXTASE", "EXILIO", "INDAGAR", "HESITAR", "PARCIAL", "SUCESSO", "GLORIA"
 };
 
 const char* big[] = {
-	"INERENTE", "PECULIAR", "PRUDENTE", "PÊSAMES", "DEFERIDO", "INVASIVO", "GENUÍNO", "RESPEITO", "ALIENADO", "REITERAR", "AUDÁCIA", "PRÓDIGO", "ABSTRATO", "ESTÁVEL", "CONSERTO", "APOLOGIA", "ASTÚCIA", "CONCEITO", "PREMISSA", "DEVANEIO", "PERSPICAZ", "RETIFICAR", "PLENITUDE", "EXTENSÃO", "ESSENCIAL", "PARADIGMA", "HEGEMONIA" "RATIFICAR", "DELIBERAR" "PRODÍGIO", "INCIDENTE", "RESIGNADO", "PERSUADIR", "DICOTOMIA", "PASSÍVEL", "DEMASIADO", "ASCENSÃO", "DESDENHAR", "MESQUINHO", "MODÉSTIA", "PRESCINDIR", "IMPRESSÃO", "CORROBORAR", "CONCESSÃO", "SUPÉRFLUO", "ESCRÚPULO", "IMPLÍCITO", "DETRIMENTO", "MATURIDADE", "INDULGENTE"
+	"INERENTE", "PECULIAR", "PRUDENTE", "PESAMES", "DEFERIDO", "INVASIVO", "GENUINO", "RESPEITO", "ALIENADO", "REITERAR", "AUDACIA", "PRODIGO", "ABSTRATO", "ESTAVEL", "CONSERTO", "APOLOGIA", "ASTUCIA", "CONCEITO", "PREMISSA", "DEVANEIO", "PERSPICAZ", "RETIFICAR", "PLENITUDE", "EXTENSAO", "ESSENCIAL", "PARADIGMA", "HEGEMONIA", "RATIFICAR", "DELIBERAR", "PRODIGIO", "INCIDENTE", "RESIGNADO", "PERSUADIR", "DICOTOMIA", "PASSIVEL", "DEMASIADO", "ASCENSAO", "DESDENHAR", "MESQUINHO", "MODESTIA", "PRESCINDIR", "IMPRESSAO", "CORROBORAR", "CONCESSAO", "SUPERFLUO", "ESCRUPULO", "IMPLICITO", "DETRIMENTO", "MATURIDADE", "INDULGENTE"
 };
+
+const char** words[] = { tiny, smalll, medium, big };
 
 ALLEGRO_DISPLAY* display = NULL;
 ALLEGRO_EVENT_QUEUE* queue = NULL;
@@ -61,8 +63,8 @@ void drawInfos(SpaceShip& ship);
 
 void initAsteroids(Asteroid asteroids[], int size);
 void drawAsteroids(Asteroid asteroids[], int size);
-void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship);
-void createAsteroid(Asteroid asteroids[], int size, int level);
+void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship, float seconds);
+void createAsteroid(Asteroid asteroids[], int size, int level, float seconds);
 int* generateAsteroidXY();
 
 void initBlackHole(BlackHole& blackHole);
@@ -232,10 +234,10 @@ int main()
 			}
 
 			if (((int)seconds == seconds) && ((int)seconds) % 2 == 0) {
-				createAsteroid(asteroids, NUM_ASTEROIDS, ship.level);
+				createAsteroid(asteroids, NUM_ASTEROIDS, ship.level, seconds);
 			}
 
-			updateAsteroids(asteroids, NUM_ASTEROIDS, ship);
+			updateAsteroids(asteroids, NUM_ASTEROIDS, ship, seconds);
 			updateBlackHole(blackHole);
 			updateBullets(bullets, NUM_BULLETS, asteroids, ship);
 			break;
@@ -308,7 +310,7 @@ void initShip(SpaceShip& ship) {
 	ship.x = mode.width / 2;
 	ship.y = mode.height / 2;
 	ship.ID = PLAYER;
-	ship.lives = 3;
+	ship.lives = 5;
 	ship.kill = 0;
 	ship.level = 1;
 	ship.speed = 8;
@@ -317,7 +319,7 @@ void initShip(SpaceShip& ship) {
 
 void drawShip(SpaceShip& ship) {
 	al_draw_scaled_rotated_bitmap(ship.bitmap,
-		al_get_bitmap_width(ship.bitmap) / 2, al_get_bitmap_height(ship.bitmap) / 2,
+		al_get_bitmap_width(ship.bitmap) / 4, al_get_bitmap_height(ship.bitmap) / 4,
 		ship.x, ship.y, 0.5, 0.5,
 		ship.angle, 0);
 }
@@ -350,7 +352,7 @@ void drawAsteroids(Asteroid asteroids[], int size)
 	}
 }
 
-void createAsteroid(Asteroid asteroids[], int size, int level)
+void createAsteroid(Asteroid asteroids[], int size, int level, float seconds)
 {
 	int qtAsteroids = random(1, 3);
 
@@ -360,17 +362,18 @@ void createAsteroid(Asteroid asteroids[], int size, int level)
 			if (!asteroids[j].live)
 			{
 				int* xy = generateAsteroidXY();
-				const char** word[] = { tiny, smalll, medium, big };
+
 				asteroids[j].x = xy[0];
 				asteroids[j].y = xy[1];
+				asteroids[j].delta = seconds;
 
 				asteroids[j].level = random(1, 4);
 
-				asteroids[j].speed = 2 * 3 / asteroids[j].level + 1;
+				asteroids[j].speed = max(1.25, (5 - asteroids[j].level) / 2);
 
 				asteroids[j].idxChar = 0;
 
-				asteroids[j].word = al_ustr_new(word[asteroids[j].level - 1][random(0, 200 - (asteroids[j].level - 1) * 50)]);
+				asteroids[j].word = al_ustr_new(words[asteroids[j].level - 1][random(0, 199 - (asteroids[j].level - 1) * 50)]);
 
 				char path[100];
 				sprintf_s(path, "assets/sprites/asteroid_%d.png", asteroids[j].level);
@@ -414,20 +417,26 @@ int* generateAsteroidXY() {
 	return coord;
 }
 
-void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship)
+void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship, float seconds)
 {
 	for (int i = 0; i < size; i++)
 	{
 		if (asteroids[i].live)
 		{
-			int deltaX = ship.x - asteroids[i].x;
-			int deltaY = ship.y - asteroids[i].y;
-			float distance = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
-			float directionX = deltaX / distance;
-			float directionY = deltaY / distance;
+			//int deltaX = ship.x - asteroids[i].x;
+			//int deltaY = ship.y - asteroids[i].y;
+			//float distance = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
+			//float directionX = deltaX / distance;
+			//float directionY = deltaY / distance;
 
-			asteroids[i].x = asteroids[i].x + lroundf(directionX * asteroids[i].speed);
-			asteroids[i].y = asteroids[i].y + lroundf(directionY * asteroids[i].speed);
+			//asteroids[i].x = asteroids[i].x + lroundf(directionX * asteroids[i].speed);
+			//asteroids[i].y = asteroids[i].y + lroundf(directionY * asteroids[i].speed);
+
+			double theta = atan2(ship.y - asteroids[i].y, ship.x - asteroids[i].x);
+			float delta = seconds - asteroids[i].delta;
+
+			asteroids[i].x += (delta * asteroids[i].speed) * cos(theta);
+			asteroids[i].y += (delta * asteroids[i].speed) * sin(theta);
 
 			int shipWidth = al_get_bitmap_width(ship.bitmap) / 2;
 			int shipHeight = al_get_bitmap_height(ship.bitmap) / 2;

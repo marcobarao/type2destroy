@@ -21,10 +21,11 @@ struct SpaceShip
 struct Asteroid
 {
 	int ID;
-	int x;
-	int y;
+	double x;
+	double y;
+	float delta;
 	bool live;
-	int speed;
+	float speed;
 	int level;
 	ALLEGRO_USTR *word;
 	int idxChar;
