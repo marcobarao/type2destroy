@@ -162,10 +162,15 @@
     <ClCompile Include="type2destroy.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="gameOver.h" />
+    <ClInclude Include="objects.h" />
+    <ClInclude Include="playing.h" />
+    <ClInclude Include="state.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="objects.h" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
