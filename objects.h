@@ -19,6 +19,10 @@ struct SpaceShip
 	int lives;
 	int speed;
 	float angle;
+	float step;
+	float stepCount;
+	float diff;
+	float targetAngle;
 	int level;
 	int score;
 	int kill;
@@ -104,6 +108,7 @@ ALLEGRO_FONT* font[5];
 ALLEGRO_FONT* wordFont;
 ALLEGRO_SAMPLE* laser;
 ALLEGRO_SAMPLE* env;
+
 ALLEGRO_BITMAP* bg = NULL;
 SpaceShip ship;
 Asteroid asteroids[NUM_ASTEROIDS];
@@ -113,6 +118,7 @@ Button restart;
 
 void initShip(SpaceShip& ship);
 void drawShip(SpaceShip& ship);
+void updateShip(SpaceShip& ship, Asteroid asteroids[]);
 
 void initCursor(Cursor& cursor);
 void hasClickedOnRestart();
@@ -129,7 +135,7 @@ int* generateAsteroidXY();
 void initBullets(Bullet bullets[], int size);
 void drawBullets(Bullet bullets[], int size);
 void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip& ship);
-void createBullet(Bullet bullet[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids);
+void createBullet(Bullet bullet[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids, int target);
 int findBulletTarget(SpaceShip& ship, Asteroid asteroids[], int size);
 
 void removeChar(int keyCode, Bullet bullets[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids, ALLEGRO_SAMPLE* laser);

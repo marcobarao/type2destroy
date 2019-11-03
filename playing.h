@@ -19,6 +19,7 @@ void playingState(ALLEGRO_EVENT &ev, bool &redraw) {
 			if (ship.kill > ship.level * 4) ship.level++;
 			if (((int)seconds == seconds) && ((int)seconds) % 2 == 0) createAsteroid(asteroids, NUM_ASTEROIDS, ship.level, seconds);
 
+			updateShip(ship, asteroids);
 			updateAsteroids(asteroids, NUM_ASTEROIDS, ship, seconds);
 			updateBullets(bullets, NUM_BULLETS, asteroids, ship);
 			break;
@@ -48,14 +49,28 @@ void initShip(SpaceShip& ship) {
 	ship.lives = 5;
 	ship.kill = 0;
 	ship.level = 1;
+	ship.target = -1;
 	ship.speed = 8;
 }
 
 void drawShip(SpaceShip& ship) {
 	al_draw_scaled_rotated_bitmap(ship.bitmap,
-		0, 0,
+		al_get_bitmap_width(ship.bitmap) / 2, al_get_bitmap_height(ship.bitmap) / 2,
 		ship.x, ship.y, 0.5, 0.5,
 		ship.angle, 0);
+}
+
+void updateShip(SpaceShip& ship, Asteroid asteroids[]) {
+	if (ship.target >= 0) {
+		if (ship.step < 0) {
+			al_play_sample(laser, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
+			createBullet(bullets, NUM_BULLETS, ship, asteroids, NUM_ASTEROIDS, ship.target);
+			ship.target = -1;
+		} else {
+			ship.angle += ship.diff / ship.stepCount;
+			ship.step--;
+		}
+	}
 }
 
 void initAsteroids(Asteroid asteroids[], int size)
@@ -228,16 +243,15 @@ void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip& 
 			int bulletY = asteroids[bullets[i].target].y + al_get_bitmap_width(asteroids[bullets[i].target].bitmap) / 2;
 			int deltaX = bulletX - bullets[i].x;
 			int deltaY = bulletY - bullets[i].y;
-			float distance = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
 			float angle = atan2(deltaX, deltaY);
+			float distance = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
 			float directionX = deltaX / distance;
 			float directionY = deltaY / distance;
+			bullets[i].angle = PI - angle;
 
 			bullets[i].x = bullets[i].x + lroundf(directionX * bullets[i].speed);
 			bullets[i].y = bullets[i].y + lroundf(directionY * bullets[i].speed);
 
-			bullets[i].angle = PI - angle;
-			ship.angle = PI - angle;
 
 			int asteroidWidth = al_get_bitmap_width(asteroids[bullets[i].target].bitmap);
 			int asteroidHeight = al_get_bitmap_height(asteroids[bullets[i].target].bitmap);
@@ -255,10 +269,8 @@ void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip& 
 	}
 }
 
-void createBullet(Bullet bullet[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids)
+void createBullet(Bullet bullet[], int sizeBullet, SpaceShip& ship, Asteroid asteroids[], int sizeAsteroids, int target)
 {
-	int target = findBulletTarget(ship, asteroids, sizeAsteroids);
-
 	for (int i = 0; i < sizeBullet; i++)
 	{
 		if (!bullet[i].live && target >= 0)
@@ -306,8 +318,16 @@ void removeChar(int keyCode, Bullet bullets[], int sizeBullet, SpaceShip& ship, 
 		asteroids[index].idxChar++;
 
 		if (asteroids[index].idxChar >= al_ustr_length(asteroids[index].word)) {
-			al_play_sample(laser, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
-			createBullet(bullets, sizeBullet, ship, asteroids, sizeAsteroids);
+			ship.target = index;
+			int bulletX = asteroids[ship.target].x + al_get_bitmap_height(asteroids[ship.target].bitmap) / 2;
+			int bulletY = asteroids[ship.target].y + al_get_bitmap_width(asteroids[ship.target].bitmap) / 2;
+			int deltaX = bulletX - ship.x;
+			int deltaY = bulletY - ship.y;
+			float angle = atan2(deltaX, deltaY);
+			ship.stepCount = 30.0 * fabsf(angle) / PI;
+			ship.step = 30.0 * fabsf(angle) / PI;
+			ship.targetAngle = (PI - angle);
+			ship.diff = (ship.targetAngle - ship.angle);
 		}
 	}
 }
