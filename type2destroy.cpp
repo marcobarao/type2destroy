@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <afx.h>
 #include <Windows.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
@@ -17,10 +18,11 @@
 #include "state.h"
 #include "playing.h"
 #include "gameOver.h"
+#include "addHighScore.h"
 
 int main()
 {
-	setGameState(PLAYING);
+	setGameState(ADD_HIGHSCORE);
 	bool close = false;
 	bool redraw = true;
 	char input[1] = "";
@@ -56,6 +58,10 @@ int main()
 
 			case GAME_OVER:
 				gameOverState(ev, redraw);
+				break;
+
+			case ADD_HIGHSCORE:
+				addHighScore(ev, redraw);
 				break;
 		}
 

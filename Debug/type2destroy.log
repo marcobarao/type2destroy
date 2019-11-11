@@ -1,5 +1,353 @@
 ﻿  type2destroy.cpp
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(305,51): warning C4018:  '>=': incompatibilidade de signed/unsigned
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(320,32): warning C4018:  '>=': incompatibilidade de signed/unsigned
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(156): warning C4172:  retornando o endereço da variável local ou temporário: coord
+  Observação: incluindo arquivo: C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdlib.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\sal.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\concurrencysal.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vadefs.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_search.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdlib.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\limits.h
+  Observação: incluindo arquivo: C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdio.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_stdio_config.h
+  Observação: incluindo arquivo: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afx.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\new.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_new_debug.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_new.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\crtdefs.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afxver_.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afxv_w32.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winsdkver.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winapifamily.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winpackagefamily.h
+  _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sdkddkver.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\excpt.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdarg.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\windef.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings_strict.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings_undef.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\driverspecs.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sdv_driverspecs.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnt.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\ctype.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wctype.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\kernelspecs.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\basetsd.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h
+  Observação: incluindo arquivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memory.h
+  Observação: incluindo arquivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memcpy_s.h
+  Observação: incluindo arquivo:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\errno.h
+  Observação: incluindo arquivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_string.h
+  Observação: incluindo arquivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstring.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\apiset.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\ktmtypes.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winbase.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\apisetcconv.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\minwinbase.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\apiquery2.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processenv.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fileapifromapp.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fileapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\debugapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\utilapiset.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\handleapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\errhandlingapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fibersapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\namedpipeapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\profileapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\heapapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ioapiset.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\synchapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\interlockedapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processthreadsapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\sysinfoapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\memoryapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\enclaveapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\threadpoollegacyapiset.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\threadpoolapiset.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\jobapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\jobapi2.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wow64apiset.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\libloaderapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\securitybaseapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\namespaceapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\systemtopologyapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processtopologyapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\securityappcontainer.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\realtimeapiset.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\timezoneapi.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wingdi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winuser.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\tvout.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnls.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\datetimeapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\stringapiset.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnls.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wincon.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wincontypes.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi2.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi3.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winver.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\verrsrc.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winreg.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\reason.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnetwk.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wnnc.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\stralign.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winsvc.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mcx.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\imm.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ime_cmodes.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\zmouse.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\CommCtrl.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\prsht.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dpa_dsa.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\tchar.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\wchar.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wconio.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wdirect.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wio.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_share.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wprocess.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wtime.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/stat.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/types.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afxv_dll.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atltrace.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atldef.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlrc.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\WinSock2.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\ws2def.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\inaddr.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\qos.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlconv.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlalloc.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Ole2.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objbase.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpc.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcdce.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcdcep.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\rpcnsi.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcnterr.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcasync.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcndr.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\rpcnsip.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcsal.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\combaseapi.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypesbase.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\unknwnbase.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objidlbase.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\cguid.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\coml2api.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objidl.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\unknwn.h
+  Observação: incluindo arquivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypes.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\propidlbase.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oaidl.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\urlmon.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oleidl.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\servprov.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\msxml.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\propidl.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oleauto.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afxstr.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\mbstring.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlcore.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlchecked.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlexcept.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlsimpcoll.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlwinverapi.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\type_traits
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\yvals_core.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\crtdefs.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xkeycheck.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstddef
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstddef
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xtr1common
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstdlib
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\initializer_list
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\cstringt.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlsimpstr.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlmem.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\ATLComMem.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atlcomcli.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\OleCtl.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ocidl.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\intrin.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\intrin0.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\setjmp.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\immintrin.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\wmmintrin.h
+  Observação: incluindo arquivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\nmmintrin.h
+  Observação: incluindo arquivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\smmintrin.h
+  Observação: incluindo arquivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\tmmintrin.h
+  Observação: incluindo arquivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\pmmintrin.h
+  Observação: incluindo arquivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\emmintrin.h
+  Observação: incluindo arquivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmmintrin.h
+  Observação: incluindo arquivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\mmintrin.h
+  Observação: incluindo arquivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\zmmintrin.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ammintrin.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\mm3dnow.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atltransactionmanager.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ktmw32.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atltime.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oledb.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\transact.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\accctrl.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afxcoll.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afxstat_.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atltypes.h
+  Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afxtls_.h
+  Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afx.inl
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/base.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/internal/alconfig.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alplatf.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/almsvc.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\io.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_io.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\fcntl.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\direct.h
+  Observação: incluindo arquivo:     C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alplatf.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/astdint.h
+  Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\inttypes.h
+  Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/astdbool.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/altime.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/color.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_draw.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_io.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/file.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/path.h
+  Observação: incluindo arquivo:     C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/utf8.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_lock.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/blender.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/clipboard.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/display.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/events.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/config.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/cpu.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/debug.h
+  Observação: incluindo arquivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\assert.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/drawing.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/error.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fixed.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fmaths.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/inline/fmaths.inl
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fshook.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fullscreen_mode.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/haptic.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/joystick.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/keyboard.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/keycodes.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/mouse.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/touch_input.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/memory.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/monitor.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/mouse_cursor.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/render_state.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/shader.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/transformations.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/system.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/threads.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/timer.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/tls.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/alcompat.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alwin.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_image.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_font.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_ttf.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_native_dialog.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_primitives.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_audio.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_acodec.h
+  Observação: incluindo arquivo: C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
+  Observação: incluindo arquivo: C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\float.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\objects.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\utils.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\config.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\state.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(305,51): warning C4018: '>=': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(320,32): warning C4018: '>=': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(320,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\gameOver.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(320,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\addHighScore.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\utils.h(42): warning C4172: retornando o endereço da variável local ou temporário: ac_Result
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(156): warning C4172: retornando o endereço da variável local ou temporário: coord
   type2destroy.vcxproj -> C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\Debug\type2destroy.exe

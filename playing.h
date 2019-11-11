@@ -324,10 +324,11 @@ void removeChar(int keyCode, Bullet bullets[], int sizeBullet, SpaceShip& ship, 
 			int deltaX = bulletX - ship.x;
 			int deltaY = bulletY - ship.y;
 			float angle = atan2(deltaX, deltaY);
-			ship.stepCount = 30.0 * fabsf(angle) / PI;
-			ship.step = 30.0 * fabsf(angle) / PI;
 			ship.targetAngle = (PI - angle);
 			ship.diff = (ship.targetAngle - ship.angle);
+			printf("%f\n", ship.diff);
+			ship.stepCount = 30.0 * fabsf(ship.diff) / PI;
+			ship.step = 30.0 * fabsf(ship.diff) / PI;
 		}
 	}
 }

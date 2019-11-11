@@ -1,4 +1,4 @@
-int gameState = PLAYING;
+int gameState = ADD_HIGHSCORE;
 bool init = true;
 
 void setGameState(GAME_STATE newState) {

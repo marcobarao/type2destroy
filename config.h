@@ -17,7 +17,7 @@ int initGame() {
 	}
 
 	for (int i = 0; i < 5; i++) {
-		font[i] = al_load_ttf_font("./assets/fonts/kenvector_future.ttf", 24 + i * 8, 0);
+		font[i] = al_load_ttf_font("./assets/fonts/kenvector_future.ttf", 16 + i * 8, 0);
 		if (!font[i]) {
 			showErrorMsg("Falha ao carregar a fonte");
 		}

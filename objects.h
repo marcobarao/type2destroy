@@ -1,5 +1,11 @@
 #define PI 3.14159265
 
+#define AFX_INIFILE_H__99976B4B_DBA1_4D1E_AA14_CBEB63042FD1__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
 const int NUM_BULLETS = 5;
 const int NUM_ASTEROIDS = 10;
 const int mapColumns = 8;
@@ -8,7 +14,7 @@ const int tileSize = 256;
 
 //Object IDs
 enum IDS { PLAYER, BLACK_HOLE, BULLET, ASTEROID };
-enum GAME_STATE { MENU, PLAYING, PAUSE, GAME_OVER };
+enum GAME_STATE { MENU, PLAYING, PAUSE, GAME_OVER, ADD_HIGHSCORE };
 
 //Our Player
 struct SpaceShip
@@ -108,6 +114,7 @@ ALLEGRO_FONT* font[5];
 ALLEGRO_FONT* wordFont;
 ALLEGRO_SAMPLE* laser;
 ALLEGRO_SAMPLE* env;
+ALLEGRO_USTR* name = al_ustr_new("");
 
 ALLEGRO_BITMAP* bg = NULL;
 SpaceShip ship;
