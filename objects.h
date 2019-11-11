@@ -14,7 +14,7 @@ const int tileSize = 256;
 
 //Object IDs
 enum IDS { PLAYER, BLACK_HOLE, BULLET, ASTEROID };
-enum GAME_STATE { MENU, PLAYING, PAUSE, GAME_OVER, ADD_HIGHSCORE };
+enum GAME_STATE { MENU, PLAYING, PAUSE, GAME_OVER, ADD_HIGHSCORE, HIGHSCORE };
 
 //Our Player
 struct SpaceShip
@@ -159,3 +159,6 @@ bool getInit();
 
 void playingState(ALLEGRO_EVENT& ev, bool& redraw);
 void gameOverState(ALLEGRO_EVENT& ev, bool& redraw);
+
+void hasClickedOnSave();
+void hasClickedOnBack();

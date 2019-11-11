@@ -1,8 +1,8 @@
 void gameOverState(ALLEGRO_EVENT& ev, bool& redraw) {
 	switch (ev.type) {
-	case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
-		clickOnButton(restart, cursor, hasClickedOnRestart);
-		break;
+		case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+			clickOnButton(restart, cursor, hasClickedOnRestart);
+			break;
 	}
 
 	if (redraw && al_is_event_queue_empty(queue)) {

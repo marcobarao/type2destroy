@@ -19,10 +19,11 @@
 #include "playing.h"
 #include "gameOver.h"
 #include "addHighScore.h"
+#include "highscore.h"
 
 int main()
 {
-	setGameState(ADD_HIGHSCORE);
+	setGameState(HIGHSCORE);
 	bool close = false;
 	bool redraw = true;
 	char input[1] = "";
@@ -62,6 +63,10 @@ int main()
 
 			case ADD_HIGHSCORE:
 				addHighScore(ev, redraw);
+				break;
+
+			case HIGHSCORE:
+				highscore(ev, redraw);
 				break;
 		}
 
