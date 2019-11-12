@@ -122,6 +122,9 @@ Asteroid asteroids[NUM_ASTEROIDS];
 Bullet bullets[NUM_BULLETS];
 Cursor cursor;
 Button restart;
+Button save;
+Button cancel;
+CStringList* highscoreRank;
 
 void initShip(SpaceShip& ship);
 void drawShip(SpaceShip& ship);
@@ -130,6 +133,8 @@ void updateShip(SpaceShip& ship, Asteroid asteroids[]);
 void initCursor(Cursor& cursor);
 void hasClickedOnRestart();
 void initRestart(Button& button);
+void initSave(Button& button);
+void initCancel(Button& button);
 
 void drawInfos(SpaceShip& ship);
 
@@ -162,3 +167,5 @@ void gameOverState(ALLEGRO_EVENT& ev, bool& redraw);
 
 void hasClickedOnSave();
 void hasClickedOnBack();
+
+void getHighscore();

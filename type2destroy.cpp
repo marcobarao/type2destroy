@@ -23,7 +23,7 @@
 
 int main()
 {
-	setGameState(HIGHSCORE);
+	setGameState(ADD_HIGHSCORE);
 	bool close = false;
 	bool redraw = true;
 	char input[1] = "";
@@ -33,7 +33,10 @@ int main()
 	}
 
 	initCursor(cursor);
+	initSave(save);
+	initCancel(cancel);
 	initRestart(restart);
+	getHighscore();
 
 	while (!close) {
 		ALLEGRO_EVENT ev;
