@@ -168,7 +168,9 @@
     <ClInclude Include="config.h" />
     <ClInclude Include="gameOver.h" />
     <ClInclude Include="highscore.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="objects.h" />
+    <ClInclude Include="pause.h" />
     <ClInclude Include="playing.h" />
     <ClInclude Include="state.h" />
     <ClInclude Include="utils.h" />

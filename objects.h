@@ -70,6 +70,13 @@ struct Cursor
 	ALLEGRO_BITMAP* bitmap;
 };
 
+struct Logo
+{
+	int x;
+	int y;
+	ALLEGRO_BITMAP* bitmap;
+};
+
 struct Button
 {
 	int x;
@@ -83,9 +90,13 @@ struct Coord
 	int y;
 };
 
-struct Guarda {
+struct Explosion
+{
+	int ID;
 	int x;
 	int y;
+	int lives;
+	ALLEGRO_BITMAP* bitmap;
 };
 
 const char* tiny[] = {
@@ -105,36 +116,66 @@ const char* big[] = {
 };
 
 const char** words[] = { tiny, smalll, medium, big };
+bool done = false;
 
 ALLEGRO_DISPLAY* display = NULL;
 ALLEGRO_EVENT_QUEUE* queue = NULL;
 ALLEGRO_TIMER* timer = NULL;
+ALLEGRO_TIMER* otherTimer = NULL;
 ALLEGRO_DISPLAY_MODE mode;
 ALLEGRO_FONT* font[5];
 ALLEGRO_FONT* wordFont;
 ALLEGRO_SAMPLE* laser;
 ALLEGRO_SAMPLE* env;
+ALLEGRO_SAMPLE* shipBoom;
+ALLEGRO_SAMPLE* boom;
+ALLEGRO_SAMPLE* lose;
 ALLEGRO_USTR* name = al_ustr_new("");
 
 ALLEGRO_BITMAP* bg = NULL;
 SpaceShip ship;
 Asteroid asteroids[NUM_ASTEROIDS];
 Bullet bullets[NUM_BULLETS];
+Explosion explosion;
 Cursor cursor;
+Logo logo;
+Logo paused;
+Logo gameOver;
+Button start;
+Button score;
+Button quitGame;
 Button restart;
 Button save;
 Button cancel;
-CStringList* highscoreRank;
+Button saveScore;
+Button pause;
+Button pauseGame;
+Button settings;
+Button menu;
+
+char** highScoreNames = (char**)malloc(10);
+int highScoreScores[10];
 
 void initShip(SpaceShip& ship);
 void drawShip(SpaceShip& ship);
 void updateShip(SpaceShip& ship, Asteroid asteroids[]);
 
+void initBg(ALLEGRO_BITMAP* bg);
 void initCursor(Cursor& cursor);
-void hasClickedOnRestart();
 void initRestart(Button& button);
 void initSave(Button& button);
+void initSaveScore(Button& button);
 void initCancel(Button& button);
+void initPause(Button& button);
+void initMenu(Button& button);
+void initPauseButton(Button& button);
+void initLogo(Logo& logo);
+void initPaused(Logo& logo);
+void initGameOver(Logo& logo);
+void initQuitGame(Button& button);
+void initScore(Button& button);
+void initStart(Button& button);
+void initMenuPause(Button& button);
 
 void drawInfos(SpaceShip& ship);
 
@@ -165,7 +206,15 @@ bool getInit();
 void playingState(ALLEGRO_EVENT& ev, bool& redraw);
 void gameOverState(ALLEGRO_EVENT& ev, bool& redraw);
 
+void hasClickedOnRestart();
 void hasClickedOnSave();
+void hasClickedOnSaveScore();
 void hasClickedOnBack();
+void hasClickedOnContinue();
+void hasClickedOnMenu();
+void hasClickedOnPause();
+void hasClickedOnStart();
+void hasClickedOnScore();
+void hasClickedOnQuitGame();
 
 void getHighscore();

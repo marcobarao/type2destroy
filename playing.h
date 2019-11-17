@@ -1,13 +1,16 @@
 void playingState(ALLEGRO_EVENT &ev, bool &redraw) {
 	if(getInit()) {
 		setInit(false);
-		al_reserve_samples(2);
+		al_reserve_samples(5);
 		laser = al_load_sample("assets/audio/sfx_laser2.ogg");
 		env = al_load_sample("assets/audio/loop_env.wav");
-		bg = al_load_bitmap("assets/sprites/bg.png");
+		shipBoom = al_load_sample("assets/audio/shipBoom.wav");
+		boom = al_load_sample("assets/audio/boom.wav");
+		lose = al_load_sample("assets/audio/sfx_lose.wav");
 		initShip(ship);
 		initAsteroids(asteroids, NUM_ASTEROIDS);
 		initBullets(bullets, NUM_BULLETS);
+		initPauseButton(pauseGame);
 		al_play_sample(env, 0.2, 0.0, 1.3, ALLEGRO_PLAYMODE_LOOP, 0);
 	}
 
@@ -24,31 +27,51 @@ void playingState(ALLEGRO_EVENT &ev, bool &redraw) {
 			updateBullets(bullets, NUM_BULLETS, asteroids, ship);
 			break;
 		case ALLEGRO_EVENT_KEY_UP:
+			if (ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+				setGameState(PAUSE);
+				break;
+			}
 			removeChar(ev.keyboard.keycode + 64, bullets, NUM_BULLETS, ship, asteroids, NUM_ASTEROIDS, laser);
+			break;
+		case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+			clickOnButton(pauseGame, cursor, hasClickedOnPause);
 			break;
 	}
 
 	if (redraw && al_is_event_queue_empty(queue)) {
-		if (ship.lives <= 0) setGameState(GAME_OVER);
-
-		for (int i = 0; i < mapSize; i++)
-			al_draw_bitmap(bg, tileSize * (i % mapColumns), tileSize * (i / mapColumns), 0);
+		if (ship.lives <= 0) {
+			setGameState(GAME_OVER);
+			al_play_sample(lose, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
+		}
 
 		drawAsteroids(asteroids, NUM_ASTEROIDS);
 		drawInfos(ship);
 		drawBullets(bullets, NUM_BULLETS);
 		drawShip(ship);
+		if (explosion.lives > 0) {
+			explosion.lives--;
+			al_draw_bitmap(explosion.bitmap, explosion.x, explosion.y, 0);
+		}
+		al_draw_scaled_bitmap(
+			pauseGame.bitmap,
+			0, 0,
+			al_get_bitmap_width(pauseGame.bitmap), al_get_bitmap_height(pauseGame.bitmap),
+			pauseGame.x, pauseGame.y,
+			al_get_bitmap_width(pauseGame.bitmap) * 0.33, al_get_bitmap_height(pauseGame.bitmap) * 0.33,
+			0
+		);
 	}
 }
 
 void initShip(SpaceShip& ship) {
 	ship.bitmap = al_load_bitmap("assets/sprites/ship.png");
-	ship.x = centerBitmapX(ship.bitmap, mode.width);
-	ship.y = centerBitmapY(ship.bitmap, mode.height);
+	ship.x = centerBitmapX(ship.bitmap, mode.width) + al_get_bitmap_width(ship.bitmap) / 2;
+	ship.y = centerBitmapY(ship.bitmap, mode.height) + al_get_bitmap_height(ship.bitmap) / 2;
 	ship.ID = PLAYER;
 	ship.lives = 5;
 	ship.kill = 0;
 	ship.level = 1;
+	ship.score = 0;
 	ship.target = -1;
 	ship.speed = 8;
 }
@@ -115,8 +138,8 @@ void createAsteroid(Asteroid asteroids[], int size, int level, float seconds)
 				asteroids[j].x = xy[0];
 				asteroids[j].y = xy[1];
 				asteroids[j].delta = seconds;
-				asteroids[j].level = random(1, 4);
-				asteroids[j].speed = max(1.25, (5 - asteroids[j].level) / 2);
+				asteroids[j].level = random(max(1, min(round(level / 3), 4)), 4);
+				asteroids[j].speed = max(1.25, (6 - asteroids[j].level) / 2);
 				asteroids[j].idxChar = 0;
 				asteroids[j].word = al_ustr_new(words[asteroids[j].level - 1][random(0, 199 - (asteroids[j].level - 1) * 50)]);
 				char path[100];
@@ -180,6 +203,11 @@ void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship, float seco
 				asteroids[i].y < (ship.y + shipHeight)) {
 				asteroids[i].live = false;
 				ship.lives--;
+				explosion.lives = 5;
+				explosion.x = ship.x - al_get_bitmap_width(ship.bitmap) / 2;
+				explosion.y = ship.y - al_get_bitmap_height(ship.bitmap) / 2;
+				explosion.bitmap = al_load_bitmap("assets/sprites/playerShip3_damage2.png");
+				al_play_sample(shipBoom, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
 			}
 		}
 	}
@@ -260,10 +288,15 @@ void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip& 
 				bullets[i].x < asteroids[bullets[i].target].x + asteroidWidth &&
 				bullets[i].y > asteroids[bullets[i].target].y &&
 				bullets[i].y < asteroids[bullets[i].target].y + asteroidHeight) {
+				explosion.bitmap = al_load_bitmap("assets/sprites/explosion3.png");
+				explosion.lives = 5;
+				explosion.x = bullets[i].x - al_get_bitmap_width(explosion.bitmap) / 2;
+				explosion.y = bullets[i].y - al_get_bitmap_height(explosion.bitmap) / 2;
+				al_play_sample(boom, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
 				bullets[i].live = false;
 				asteroids[bullets[i].target].live = false;
 				ship.kill++;
-				ship.score += asteroids[bullets[i].target].level * 2;
+				ship.score += round(asteroids[bullets[i].target].level * 2 / asteroids[bullets[i].target].level / 10);
 			}
 		}
 	}
@@ -326,9 +359,8 @@ void removeChar(int keyCode, Bullet bullets[], int sizeBullet, SpaceShip& ship, 
 			float angle = atan2(deltaX, deltaY);
 			ship.targetAngle = (PI - angle);
 			ship.diff = (ship.targetAngle - ship.angle);
-			printf("%f\n", ship.diff);
-			ship.stepCount = 30.0 * fabsf(ship.diff) / PI;
-			ship.step = 30.0 * fabsf(ship.diff) / PI;
+			ship.stepCount = 30.0 * fabsf(ship.diff) / (2 * PI);
+			ship.step = 30.0 * fabsf(ship.diff) / (2 * PI);
 		}
 	}
 }
@@ -359,4 +391,15 @@ int findAsteroidToRemoveChar(int keyCode, SpaceShip& ship, Asteroid asteroids[],
 	}
 
 	return min.idx;
+}
+
+void initPauseButton(Button& button) {
+	button.bitmap = al_load_bitmap("assets/sprites/esc.png");
+	button.x = mode.width - (al_get_bitmap_width(button.bitmap) * 0.33 + 32);
+	button.y = 32;
+}
+
+void hasClickedOnPause()
+{
+	setGameState(PAUSE);
 }

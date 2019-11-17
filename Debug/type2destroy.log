@@ -274,81 +274,85 @@
   Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\atltypes.h
   Observação: incluindo arquivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afxtls_.h
   Observação: incluindo arquivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\atlmfc\include\afx.inl
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/base.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/internal/alconfig.h
-  Observação: incluindo arquivo:    C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alplatf.h
-  Observação: incluindo arquivo:    C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/almsvc.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/base.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/internal/alconfig.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alplatf.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/almsvc.h
   Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\io.h
   Observação: incluindo arquivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_io.h
   Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\fcntl.h
   Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\direct.h
-  Observação: incluindo arquivo:     C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alplatf.h
-  Observação: incluindo arquivo:    C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/astdint.h
+  Observação: incluindo arquivo:     C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alplatf.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/astdint.h
   Observação: incluindo arquivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\inttypes.h
   Observação: incluindo arquivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h
-  Observação: incluindo arquivo:    C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/astdbool.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/altime.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/color.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_draw.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_io.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/file.h
-  Observação: incluindo arquivo:    C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/path.h
-  Observação: incluindo arquivo:     C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/utf8.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_lock.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/blender.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/clipboard.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/display.h
-  Observação: incluindo arquivo:    C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/events.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/config.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/cpu.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/debug.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/astdbool.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/altime.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/color.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_draw.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_io.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/file.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/path.h
+  Observação: incluindo arquivo:     C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/utf8.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/bitmap_lock.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/blender.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/clipboard.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/display.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/events.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/config.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/cpu.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/debug.h
   Observação: incluindo arquivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\assert.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/drawing.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/error.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fixed.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fmaths.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/inline/fmaths.inl
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fshook.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fullscreen_mode.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/haptic.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/joystick.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/keyboard.h
-  Observação: incluindo arquivo:    C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/keycodes.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/mouse.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/touch_input.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/memory.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/monitor.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/mouse_cursor.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/render_state.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/shader.h
-  Observação: incluindo arquivo:   C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/transformations.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/system.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/threads.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/timer.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/tls.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/alcompat.h
-  Observação: incluindo arquivo:  C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alwin.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_image.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_font.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_ttf.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_native_dialog.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_primitives.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_audio.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_acodec.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/drawing.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/error.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fixed.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fmaths.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/inline/fmaths.inl
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fshook.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/fullscreen_mode.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/haptic.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/joystick.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/keyboard.h
+  Observação: incluindo arquivo:    C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/keycodes.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/mouse.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/touch_input.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/memory.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/monitor.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/mouse_cursor.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/render_state.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/shader.h
+  Observação: incluindo arquivo:   C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/transformations.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/system.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/threads.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/timer.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/tls.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/alcompat.h
+  Observação: incluindo arquivo:  C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/platform/alwin.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_image.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_font.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_ttf.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_native_dialog.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_primitives.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_audio.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\packages\Allegro.5.2.5.2\build\native\include\allegro5/allegro_acodec.h
   Observação: incluindo arquivo: C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
   Observação: incluindo arquivo: C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\float.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\objects.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\utils.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\config.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\state.h
-  Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\playing.h
-C:\Users\marco.abneves\dev\type2destroy\playing.h(305,51): warning C4018: '>=': incompatibilidade de signed/unsigned
-C:\Users\marco.abneves\dev\type2destroy\playing.h(320,32): warning C4018: '>=': incompatibilidade de signed/unsigned
-C:\Users\marco.abneves\dev\type2destroy\playing.h(320,32): warning C4018: Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\gameOver.h
-C:\Users\marco.abneves\dev\type2destroy\playing.h(320,32): warning C4018: Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\addHighScore.h
-C:\Users\marco.abneves\dev\type2destroy\playing.h(320,32): warning C4018: Observação: incluindo arquivo: C:\Users\marco.abneves\dev\type2destroy\highscore.h
-C:\Users\marco.abneves\dev\type2destroy\utils.h(42): warning C4172: retornando o endereço da variável local ou temporário: ac_Result
-C:\Users\marco.abneves\dev\type2destroy\playing.h(156): warning C4172: retornando o endereço da variável local ou temporário: coord
-  type2destroy.vcxproj -> C:\Users\marco.abneves\dev\type2destroy\Debug\type2destroy.exe
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\objects.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\utils.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\config.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\state.h
+  Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(338,51): warning C4018: '>=': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(353,32): warning C4018: '>=': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(353,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\gameOver.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(353,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\addHighScore.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(353,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(21,32): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(52,9): warning C4101: 'end': variável local não referenciada
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(52,9): warning C4101: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\pause.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(52,9): warning C4101: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\menu.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\utils.h(42): warning C4172: retornando o endereço da variável local ou temporário: ac_Result
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(179): warning C4172: retornando o endereço da variável local ou temporário: coord
+  type2destroy.vcxproj -> C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\Debug\type2destroy.exe

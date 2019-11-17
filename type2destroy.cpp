@@ -20,44 +20,57 @@
 #include "gameOver.h"
 #include "addHighScore.h"
 #include "highscore.h"
+#include "pause.h"
+#include "menu.h"
 
 int main()
 {
-	setGameState(ADD_HIGHSCORE);
-	bool close = false;
-	bool redraw = true;
-	char input[1] = "";
-
 	if (!initGame()) {
 		return -1;
 	}
 
+	setGameState(MENU);
+	bool redraw = true;
+	char input[1] = "";
+
 	initCursor(cursor);
-	initSave(save);
-	initCancel(cancel);
-	initRestart(restart);
+	bg = al_load_bitmap("assets/sprites/bg.png");
+	
 	getHighscore();
 
-	while (!close) {
+	while (!done) {
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(queue, &ev);
 
 		switch (ev.type) {
-		case ALLEGRO_EVENT_TIMER:
-			redraw = true;
-			break;
-		case ALLEGRO_EVENT_DISPLAY_CLOSE:
-			close = true;
-			break;
-		case ALLEGRO_EVENT_MOUSE_AXES:
-			cursor.x = ev.mouse.x;
-			cursor.y = ev.mouse.y;
-			break;
+			case ALLEGRO_EVENT_TIMER:
+				redraw = true;
+				break;
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				done = true;
+				break;
+			case ALLEGRO_EVENT_MOUSE_AXES:
+				cursor.x = ev.mouse.x;
+				cursor.y = ev.mouse.y;
+				break;
+		}
+
+		if (redraw && al_is_event_queue_empty(queue)) {
+			for (int i = 0; i < mapSize; i++)
+				al_draw_bitmap(bg, tileSize * (i % mapColumns), tileSize * (i / mapColumns), 0);
 		}
 
 		switch(getGameState()) {
+			case MENU:
+				menuState(ev, redraw);
+				break;
+
 			case PLAYING:
 				playingState(ev, redraw);
+				break;
+
+			case PAUSE:
+				pauseState(ev, redraw);
 				break;
 
 			case GAME_OVER:

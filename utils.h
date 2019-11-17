@@ -62,27 +62,26 @@ long setKey(CString strValue, CString strKey, CString strSection, CString strFil
 	return m_lRetValue;
 }
 
-CStringList* getSectionData(CString strSection, CString strFileName)
+int getSectionData(CString strSection, CString strFileName, ALLEGRO_USTR** sectionDataList)
 {
-	char ac_Result[4000];  //change size depending on needs
-	CStringList* sectionDataList = new CStringList();
+	char ac_Result[5000];  //change size depending on needs
 	long m_lRetValue;
 
-	m_lRetValue = GetPrivateProfileSection((LPCTSTR)strSection, (LPWSTR)ac_Result, 4000, (LPCTSTR)strFileName);
+	m_lRetValue = GetPrivateProfileSection((LPCTSTR)strSection, (LPWSTR)ac_Result, 5000, (LPCTSTR)strFileName);
 
-	CString strSectionData;
-	for (int i = 0; i < m_lRetValue; i++)
+	int j = 0;
+	ALLEGRO_USTR* line = al_ustr_new("");
+	for (int i = 0; i < m_lRetValue * 2; i += 2)
 	{
 		if (ac_Result[i] != '\0') {
-			strSectionData = strSectionData + ac_Result[i];
+			al_ustr_append_chr(line, ac_Result[i]);
 		}
 		else {
-			if (strSectionData != "") {
-				sectionDataList->InsertAfter(sectionDataList->GetTailPosition(), strSectionData);
-			}
-			strSectionData = "";
+			sectionDataList[j] = line;
+			line = al_ustr_new("");
+			j++;
 		}
 	}
 
-	return sectionDataList;
+	return j;
 }

@@ -54,6 +54,12 @@ int initGame() {
 		return 0;
 	}
 
+	otherTimer = al_create_timer(1.0 / 60);
+	if (!otherTimer) {
+		showErrorMsg("Falha ao criar timer");
+		return 0;
+	}
+
 	queue = al_create_event_queue();
 	if (!queue) {
 		showErrorMsg("Falha ao criar fila de eventos");
@@ -83,6 +89,7 @@ int initGame() {
 
 	al_register_event_source(queue, al_get_keyboard_event_source());
 	al_register_event_source(queue, al_get_timer_event_source(timer));
+	al_register_event_source(queue, al_get_timer_event_source(otherTimer));
 	al_register_event_source(queue, al_get_display_event_source(display));
 	al_register_event_source(queue, al_get_mouse_event_source());
 
