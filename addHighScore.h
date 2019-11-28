@@ -38,6 +38,9 @@ void initSave(Button& button) {
 
 void hasClickedOnSave()
 {
+	if (al_ustr_equal(name, al_ustr_empty_string())) {
+		name = al_ustr_new(words[3][random(0, 49)]);
+	}
 	char score[12];
 	sprintf_s(score, "%d", ship.score);
 	setKey(score, al_cstr(name), "Players", "./highscore.ini");

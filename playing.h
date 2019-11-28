@@ -6,12 +6,13 @@ void playingState(ALLEGRO_EVENT &ev, bool &redraw) {
 		env = al_load_sample("assets/audio/loop_env.wav");
 		shipBoom = al_load_sample("assets/audio/shipBoom.wav");
 		boom = al_load_sample("assets/audio/boom.wav");
-		lose = al_load_sample("assets/audio/sfx_lose.wav");
+		lose = al_load_sample("assets/audio/sfx_lose.ogg");
 		initShip(ship);
 		initAsteroids(asteroids, NUM_ASTEROIDS);
 		initBullets(bullets, NUM_BULLETS);
 		initPauseButton(pauseGame);
-		al_play_sample(env, 0.2, 0.0, 1.3, ALLEGRO_PLAYMODE_LOOP, 0);
+		al_stop_sample(&envId);
+		al_play_sample(env, 0.2, 0.0, 1.3, ALLEGRO_PLAYMODE_LOOP, &envId);
 	}
 
 	float seconds;
@@ -20,7 +21,7 @@ void playingState(ALLEGRO_EVENT &ev, bool &redraw) {
 			seconds = al_get_timer_count(timer) / 100.0;
 			srand(time(NULL));
 			if (ship.kill > ship.level * 4) ship.level++;
-			if (((int)seconds == seconds) && ((int)seconds) % 2 == 0) createAsteroid(asteroids, NUM_ASTEROIDS, ship.level, seconds);
+			if (((int)seconds == seconds) && ((int)seconds) % 3 == 0) createAsteroid(asteroids, NUM_ASTEROIDS, ship.level, seconds);
 
 			updateShip(ship, asteroids);
 			updateAsteroids(asteroids, NUM_ASTEROIDS, ship, seconds);
@@ -40,8 +41,13 @@ void playingState(ALLEGRO_EVENT &ev, bool &redraw) {
 
 	if (redraw && al_is_event_queue_empty(queue)) {
 		if (ship.lives <= 0) {
-			setGameState(GAME_OVER);
-			al_play_sample(lose, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
+			if (ship.score > highScoreScores[9]) {
+				setGameState(ADD_HIGHSCORE);
+			}
+			else {
+				setGameState(GAME_OVER);
+				al_play_sample(lose, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
+			}
 		}
 
 		drawAsteroids(asteroids, NUM_ASTEROIDS);
@@ -85,7 +91,7 @@ void drawShip(SpaceShip& ship) {
 
 void updateShip(SpaceShip& ship, Asteroid asteroids[]) {
 	if (ship.target >= 0) {
-		if (ship.step < 0) {
+		if (ship.step <= 0) {
 			al_play_sample(laser, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
 			createBullet(bullets, NUM_BULLETS, ship, asteroids, NUM_ASTEROIDS, ship.target);
 			ship.target = -1;
@@ -115,9 +121,11 @@ void drawAsteroids(Asteroid asteroids[], int size)
 	for (int i = 0; i < size; i++)
 	{
 		if (asteroids[i].live) {
-			al_draw_bitmap(asteroids[i].bitmap, asteroids[i].x, asteroids[i].y, 0);
-			int x = asteroids[i].x + al_get_bitmap_width(asteroids[i].bitmap) / 2 - al_get_ustr_width(wordFont, asteroids[i].word) / 2;
-			int y = asteroids[i].y + al_get_bitmap_height(asteroids[i].bitmap) + 10;
+			al_draw_rotated_bitmap(asteroids[i].bitmap,
+				al_get_bitmap_width(asteroids[i].bitmap) / 2, al_get_bitmap_height(asteroids[i].bitmap) / 2,
+				asteroids[i].x, asteroids[i].y, 0, 0);
+			int x = asteroids[i].x - al_get_ustr_width(wordFont, asteroids[i].word) / 2;
+			int y = asteroids[i].y + al_get_bitmap_height(asteroids[i].bitmap) / 2 + 10;
 			al_draw_ustr(wordFont, al_map_rgb(255, 255, 255), x, y, 0, asteroids[i].word);
 			al_draw_ustr(wordFont, al_map_rgb(255, 255, 0), x, y, 0, al_ustr_dup_substr(asteroids[i].word, 0, asteroids[i].idxChar));
 		}
@@ -203,7 +211,7 @@ void updateAsteroids(Asteroid asteroids[], int size, SpaceShip& ship, float seco
 				asteroids[i].y < (ship.y + shipHeight)) {
 				asteroids[i].live = false;
 				ship.lives--;
-				explosion.lives = 5;
+				explosion.lives = 20;
 				explosion.x = ship.x - al_get_bitmap_width(ship.bitmap) / 2;
 				explosion.y = ship.y - al_get_bitmap_height(ship.bitmap) / 2;
 				explosion.bitmap = al_load_bitmap("assets/sprites/playerShip3_damage2.png");
@@ -289,14 +297,14 @@ void updateBullets(Bullet bullets[], int size, Asteroid asteroids[], SpaceShip& 
 				bullets[i].y > asteroids[bullets[i].target].y &&
 				bullets[i].y < asteroids[bullets[i].target].y + asteroidHeight) {
 				explosion.bitmap = al_load_bitmap("assets/sprites/explosion3.png");
-				explosion.lives = 5;
+				explosion.lives = 20;
 				explosion.x = bullets[i].x - al_get_bitmap_width(explosion.bitmap) / 2;
 				explosion.y = bullets[i].y - al_get_bitmap_height(explosion.bitmap) / 2;
 				al_play_sample(boom, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
 				bullets[i].live = false;
 				asteroids[bullets[i].target].live = false;
 				ship.kill++;
-				ship.score += round(asteroids[bullets[i].target].level * 2 / asteroids[bullets[i].target].level / 10);
+				ship.score += asteroids[bullets[i].target].level * 2;
 			}
 		}
 	}

@@ -14,15 +14,12 @@ void highscore(ALLEGRO_EVENT& ev, bool& redraw) {
 		char string[] = "Highscore";
 		al_draw_text(font[4], al_map_rgb(255, 255, 255), (mode.width / 2 - al_get_text_width(font[4], string) / 2), mode.height * 0.1, 20, string);
 		for (int i = 0; i < 10; i++) {
-			ALLEGRO_USTR* line = al_ustr_new(highScoreNames[i]);
 			char score[6];
 			sprintf_s(score, "%d", highScoreScores[i]);
-			int padding = 100 - strlen(highScoreNames[i]) - strlen(score);
-			while (al_ustr_length(line) < padding) {
-				al_ustr_append_chr(line, '.');
-			}
-			al_ustr_append_cstr(line, score);
-			al_draw_text(font[2], al_map_rgb(255, 255, 255), (mode.width / 2 - al_get_text_width(font[2], al_cstr(line)) / 2), mode.height * (0.05 * i) + mode.height * 0.2, 20, al_cstr(line));
+			al_draw_text(wordFont, al_map_rgb(255, 255, 255), mode.width * 0.2, mode.height * (0.05 * i) + mode.height * 0.2, 20, highScoreNames[i]);
+			al_draw_text(wordFont, al_map_rgb(255, 255, 255), mode.width * 0.82 - al_get_text_width(wordFont, score), mode.height * (0.05 * i) + mode.height * 0.2, 20, score);
+
+			al_draw_line(mode.width * 0.2 + (al_get_text_width(wordFont, highScoreNames[i]) + 10), mode.height * (0.05 * i) + mode.height * 0.2 + al_get_font_line_height(wordFont) / 2, mode.width * 0.82 - (10 + al_get_text_width(wordFont, score)), mode.height * (0.05 * i) + mode.height * 0.2 + al_get_font_line_height(wordFont) / 2, al_map_rgb(255, 255, 255), 2);
 		}
 		al_draw_bitmap(cancel.bitmap, cancel.x, cancel.y, 0);
 	}

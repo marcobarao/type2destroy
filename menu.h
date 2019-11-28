@@ -3,7 +3,12 @@ void menuState(ALLEGRO_EVENT& ev, bool& redraw) {
 		setInit(false);
 		al_reserve_samples(1);
 		env = al_load_sample("assets/audio/menu.wav");
-		al_play_sample(env, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, 0);
+
+		if (&envId) {
+			al_stop_sample(&envId);
+		}
+
+		al_play_sample(env, 1, 0.0, 1.3, ALLEGRO_PLAYMODE_ONCE, &envId);
 		initLogo(logo);
 		initStart(start);
 		initScore(score);

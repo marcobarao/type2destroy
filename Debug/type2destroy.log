@@ -344,15 +344,14 @@
   Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\config.h
   Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\state.h
   Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(338,51): warning C4018: '>=': incompatibilidade de signed/unsigned
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(353,32): warning C4018: '>=': incompatibilidade de signed/unsigned
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(353,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\gameOver.h
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(353,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\addHighScore.h
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(353,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(21,32): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(52,9): warning C4101: 'end': variável local não referenciada
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(52,9): warning C4101: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\pause.h
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(52,9): warning C4101: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\menu.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(346,51): warning C4018: '>=': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(361,32): warning C4018: '>=': incompatibilidade de signed/unsigned
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(361,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\gameOver.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(361,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\addHighScore.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(361,32): warning C4018: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(49,9): warning C4101: 'end': variável local não referenciada
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(49,9): warning C4101: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\pause.h
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\highscore.h(49,9): warning C4101: Observação: incluindo arquivo: C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\menu.h
 C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\utils.h(42): warning C4172: retornando o endereço da variável local ou temporário: ac_Result
-C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(179): warning C4172: retornando o endereço da variável local ou temporário: coord
+C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\playing.h(187): warning C4172: retornando o endereço da variável local ou temporário: coord
   type2destroy.vcxproj -> C:\Users\MARCOANTONIOBARAONEV\dev\type2destroy\Debug\type2destroy.exe

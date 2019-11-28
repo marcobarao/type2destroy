@@ -15,6 +15,9 @@ void setGameState(GAME_STATE newState) {
 		case PLAYING:
 			init = gameState != PAUSE;
 			break;
+		case MENU:
+			init = gameState != HIGHSCORE;
+			break;
 	}
 	gameState = newState;
 }
